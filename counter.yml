@@ -1,0 +1,18 @@
+enable : true
+heading : "Average Interviewer Cost per year"
+counter_item: 
+  - title: "Applicants"
+    number: "96"
+    desc: "8 applicants per hire"
+
+  - title: "Interview Rounds"
+    number: "386"
+    desc: "4 rounds per applicant"
+
+  - title: "Hours Consumed"
+    number: "768"
+    desc: "Effective 2 hours per round"
+
+  - title: "Interviewer Cost"
+    number: "$25600"
+    desc: "$33.3 per hour"

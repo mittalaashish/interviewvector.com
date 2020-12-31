@@ -1,0 +1,29 @@
+enable  : true
+title   : KEY HIGHLIGHTS
+subtitle:
+image   :
+service_item :
+  - icon  : images/services/general-programming.png
+    title : General Programming
+    description: >
+      Evaluate programming skills of candidates with our General programming tests that Support over 25 major programming languages.
+
+  - icon  : images/services/real-world.jpg
+    title : Real-World Engineering Simulations
+    description: >
+      Evaluate candidates in all kinds of environments — from infrastructure management to database manipulation to your full stack environment.
+
+  - icon  : images/services/interview.png
+    title : Video Interviews
+    description: >
+      We conduct live technical interviews for backend and frontend via a structurised and transparent process. Standardized interviews help you create the scenarios and watch your candidates’ recorded answers on your time.
+
+  - icon  : images/services/assignment.png
+    title : Take-Home Assignments
+    description: >
+      Tailored and professionally designed take-home assignments enable our partners to assess the candidate on technical levels ( quality of code, architecture and robustness of design, ease of execution and test coverage ) in the preliminary rounds.
+
+  - icon  : images/services/feedback.png
+    title : Detailed Feedback
+    description: >
+      Our comprehensive feedback allows you to take a quick and informed decision by efficiently evaluating a candidate's performance. Covers skills not only technical but also non-tangible like concentration, communication and attention to detail.
