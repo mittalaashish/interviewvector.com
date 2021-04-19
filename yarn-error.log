@@ -1,0 +1,70 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add react-elastic-carousel
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/vivekregmi/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.16.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: connect ENETUNREACH 104.16.22.35:443 - Local (0.0.0.0:49953)
+      at internalConnect (net.js:921:16)
+      at defaultTriggerAsyncIdScope (internal/async_hooks.js:430:12)
+      at emitLookup (net.js:1064:9)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:107131:28
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:107040:13
+      at RawTask.module.exports.RawTask.call (/usr/local/lib/node_modules/yarn/lib/cli.js:83614:19)
+      at flush (/usr/local/lib/node_modules/yarn/lib/cli.js:83696:29)
+      at processTicksAndRejections (internal/process/task_queues.js:75:11)
+      at runNextTicks (internal/process/task_queues.js:62:3)
+      at processImmediate (internal/timers.js:434:9)
+
+npm manifest: 
+  {
+    "name": "gatsby-starter-hello-world",
+    "private": true,
+    "description": "A simplified bare-bones starter for Gatsby",
+    "version": "0.1.0",
+    "license": "0BSD",
+    "scripts": {
+      "build": "gatsby build",
+      "develop": "gatsby develop",
+      "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+      "start": "npm run develop",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean",
+      "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    },
+    "dependencies": {
+      "@material-ui/core": "^4.11.3",
+      "@react-icons/all-files": "^4.1.0",
+      "gatsby": "^3.2.1",
+      "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+      "react": "^17.0.1",
+      "react-dom": "^17.0.1",
+      "react-icons": "^4.2.0"
+    },
+    "devDependencies": {
+      "prettier": "2.2.1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    },
+    "bugs": {
+      "url": "https://github.com/gatsbyjs/gatsby/issues"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
