@@ -7,6 +7,8 @@ import unnamed from "../../static/unnamed 1.svg"
 import vector from "../../static/Vector.svg"
 import emailjs from "emailjs-com"
 
+import "../styles/global.css"
+
 const Index = () => {
 
   const breakpoints = [

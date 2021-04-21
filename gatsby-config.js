@@ -8,15 +8,14 @@ module.exports = {
   /* Your site config here */
   plugins: [
     {
-      resolve: `gatsby-plugin-google-fonts-v2`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Poppins`,
-            variants: [`400`, `700`]
-          },
+          `Poppins`,
         ],
+        display: 'swap'
       },
-    }
+    },
+    `gatsby-plugin-styled-components`,
   ],
 }
