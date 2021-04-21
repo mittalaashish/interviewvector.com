@@ -21,7 +21,7 @@
     "emailjs-com": "^2.6.4",
     "gatsby": "^3.3.1",
     "gatsby-plugin-emotion": "^6.3.0",
-    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-react-helmet": "^4.3.0",
     "gatsby-plugin-styled-components": "^4.3.0",
     "react": "^17.0.1",

@@ -6,8 +6,9 @@ import BusinessForm from "../components/BusinessForm";
 import InterviewerForm from "../components/InterviewerForm";
 import unnamed from "../../static/unnamed 1.svg"
 import vector from "../../static/Vector.svg"
-import '../styles/global.css';
 import emailjs from "emailjs-com"
+
+import "../styles/global.css"
 
 const Index = () => {
   let items = [
