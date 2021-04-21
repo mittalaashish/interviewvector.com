@@ -1,12 +1,13 @@
 import React from 'react'
 import ArrowRightAltOutlinedIcon from '@material-ui/icons/ArrowRightAltOutlined';
-import arrow from "../../static/arrow.png"
+import arrow from "../../static/arrow.png";
 
-const InterviewerForm = ({ onSubmit }) => {
+
+const InterviewerForm = () => {
     return (
         <div className="right">
             <div className="w-form">
-                <form id="email-form" name="email-form" data-name="Email Form" onSubmit={onSubmit}>
+                <form id="contact-form" data-netlify={true} method="POST">
                     <label htmlFor="name" className="lebel">
                         Full Name <span style={{ color: "red" }}>*</span>
                     </label>

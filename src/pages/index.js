@@ -1,15 +1,22 @@
 import React, { useState } from "react"
 import { FaArrowRight } from 'react-icons/fa';
 import Carousel from 'react-elastic-carousel';
+import { Helmet } from "react-helmet"
 import BusinessForm from "../components/BusinessForm";
 import InterviewerForm from "../components/InterviewerForm";
 import unnamed from "../../static/unnamed 1.svg"
 import vector from "../../static/Vector.svg"
+import '../styles/global.css';
 import emailjs from "emailjs-com"
 
-import "../styles/global.css"
-
 const Index = () => {
+  let items = [
+    { id: 1, title: 'item #1' },
+    { id: 2, title: 'item #2' },
+    { id: 3, title: 'item #3' },
+    { id: 4, title: 'item #4' },
+    { id: 5, title: 'item #5' }
+  ]
 
   const breakpoints = [
     { width: 1, itemsToShow: 1 },
@@ -20,8 +27,9 @@ const Index = () => {
   ]
 
   const sendEmail = (e) => {
+    console.log(e.target)
     e.preventDefault();
-    emailjs.sendForm('gmail', 'template_lh5n34q', e.target, 'user_IRfWqLOrrNthBdJhxEEUu')
+    emailjs.sendForm('service_mx1wsgn', 'template_vpsh82k', e.target, 'user_vuffQ061MZ8EwO6mikJIc')
       .then((result) => {
         console.log(result.text);
       }, (error) => {
@@ -37,6 +45,14 @@ const Index = () => {
 
   return (
     <div>
+       <div className="application">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Interview Vector</title>
+          {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+          <link rel="icon" href="iv.png" />
+        </Helmet>
+      </div>
       <div className="hero">
         <div
           data-collapse="medium"
@@ -44,8 +60,9 @@ const Index = () => {
           data-duration={400}
           role="banner"
           className="navbar w-nav"
+          id="nav-section"
         >
-          <div className="container w-container">
+          <div className="container w-container" >
             <a href="#" className="brand w-nav-brand">
               <img
                 src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073439ed222cb39f8564bf9_brand.svg"
@@ -55,21 +72,21 @@ const Index = () => {
             </a>
             <nav role="navigation" className="w-nav-menu">
               <a
-                href="#"
+                href="#home"
                 className="nav-link w-nav-link"
                 style={{ maxWidth: "1134px" }}
               >
                 Home
               </a>
               <a
-                href="#"
+                href="#abot"
                 className="nav-link w-nav-link"
                 style={{ maxWidth: "1134px" }}
               >
                 About
               </a>
               <a
-                href="#"
+                href="#service"
                 className="nav-link w-nav-link"
                 style={{ maxWidth: "1134px" }}
               >
@@ -77,14 +94,15 @@ const Index = () => {
               </a>
 
               <a
-                href="#"
+               href="https://app.interviewvector.com/" target="_blank" rel="noopener noreferrer"
                 className="nav-link w-nav-link"
                 style={{ maxWidth: "1134px" }}
               >
                 Log In
               </a>
               <a
-                href="#"
+                
+                href="#form"
                 className="nav-link button w-nav-link"
                 style={{ maxWidth: "1134px" }}
               >
@@ -106,8 +124,8 @@ const Index = () => {
           </div>
           <div className="w-nav-overlay" data-wf-ignore id="w-nav-overlay-0" />
         </div>
-        <div className="container">
-          <div className="flex-box">
+        <div className="container" style={{marginTop:"100px"}} id="home">
+          <div className="flex-box" >
             <div className="left-block">
               <div className="title-with-background">
                 <h1 className="heading-3">HIRE RIGHT. </h1>
@@ -117,7 +135,7 @@ const Index = () => {
                 Build talent pipelines without compromising on business growth time. Our interview-as-a-service platform provides faster, more accurate hiring rate at lower cost and lesser time . Being a talented engineer does not guarantee expertise in interviewing.
               </p>
               <div className="hero-button">
-                <div className="text-block bold">Request a demo </div>
+               <a href="#form" style={{textDecoration:"none"}}><div className="text-block bold">  Request a demo</div></a>
                 <img
                   src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/607374bb03881b255b7b2bff_primary%20arrow.svg"
                   loading="lazy"
@@ -129,11 +147,11 @@ const Index = () => {
             <div className="right-block">
               <div className="image-wrapper div-block">
                 <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075bf1282a9bc2eb5172ed3_hero1.png"
+                  src="hero.png"
                   loading="lazy"
                   sizes="(max-width: 479px) 82vw, (max-width: 767px) 48vw, (max-width: 991px) 55vw, 57vw"
                   width={734}
-                  srcSet="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075bf1282a9bc2eb5172ed3_hero1-p-500.png 500w, https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075bf1282a9bc2eb5172ed3_hero1-p-800.png 800w, https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075bf1282a9bc2eb5172ed3_hero1-p-1080.png 1080w, https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075bf1282a9bc2eb5172ed3_hero1.png 1468w"
+                  
                   alt=""
                   className="image-13"
                 />
@@ -142,7 +160,7 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div className="section _1">
+      <div className="section _1" style={{marginTop:"-40px"}}>
         <div className="container">
           <div className="text-wrapper">
             <h1 className="heading2">BRANDS TRUSTING US</h1>
@@ -190,27 +208,30 @@ const Index = () => {
             </div>
           </div>
           <div className="wrapper">
-            <h3 className="heading-5">and 30+ more</h3>
+            <h3 className="heading-5">and 50+ </h3>
             <div className="div-block-3">
-              <h3 className="heading-6">emerging startups</h3>
+              <h3 className="heading-6"> more startups</h3>
             </div>
           </div>
           <div className="wrapper">
             <div className="secondary-button">
-              <div className="text-block">
+            <a href="#testimonials" style={{textDecoration:"none"}}> <div className="text-block">
                 See what our customers have to say
               </div>
+              </a>
               <img
                 src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/607374bc2ba2bf82923693d5_secondary%20arrow.svg"
                 loading="lazy"
                 alt=""
                 className="image-6"
               />
+             
             </div>
+           
           </div>
         </div>
       </div>
-      <div className="section mockup mockup3">
+      <div className="section mockup mockup3" id="service" >
         <div className="container">
           <div className="flex-box">
             <div className="right-mock-up">
@@ -268,19 +289,20 @@ const Index = () => {
                   loading="lazy"
                   alt=""
                   className="image-14"
+                  style={{marginLeft:"-3px"}}
                 />
-                <div className="text-block-9">
+                <div className="text-block-9" style={{marginTop:"3px"}}>
                   Professional interview experience
                 </div>
               </div>
             </div>
             <div className="left-mock-up">
               <img
-                src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075c9ab223a2f2b26443d64_mockup%20img.jpg"
+                src="interviewer.png"
                 loading="lazy"
                 width={70}
                 sizes="(max-width: 479px) 100vw, 563px"
-                srcSet="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075c9ab223a2f2b26443d64_mockup%20img-p-800.jpeg 800w, https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075c9ab223a2f2b26443d64_mockup%20img.jpg 986w"
+               /// srcSet="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075c9ab223a2f2b26443d64_mockup%20img-p-800.jpeg 800w, https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075c9ab223a2f2b26443d64_mockup%20img.jpg 986w"
                 alt=""
                 className="image-7"
               />
@@ -288,7 +310,7 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div className="section mockup mockup4">
+      <div className="section mockup mockup4" >
         <div className="container">
           <div className="flex-box">
             <div className="left-mock-up-2">
@@ -355,37 +377,103 @@ const Index = () => {
         <h1 className="heading2 panel">OUR INTERVIEWING PANEL</h1>
         <div className="div-block-2 small" />
         <div className="flex-box center bot">
-          <div className="top1">
-            <div className="text-block-10 div-block-11">
-              Subject matter experts in multiple programming languages <br />
+        
+          <div className="top1 ">
+         
+            <div className="text-block-10 ">
+            <img  style={{marginLeft:"-35px"}}
+                  src="desc1.png"
+                  loading="lazy"
+                  alt="hii"
+                 
+                />
+             
             </div>
-          </div>
-          <div className="top1 marg">
-            <div className="text-block-10 _2">
-              Professional and trained interviewers
-              <br />
+            <div>
+            <hr className="panel-line"></hr>
             </div>
-          </div>
-          <div className="top1">
-            <div className="text-block-10 _3">
-              Hailing from FAANG companies &nbsp;&amp; &nbsp;unicorn startups
+            <div>
+              <h6 className="desc_head">Experts from multiple <br/>technology  domains</h6>
             </div>
+            
           </div>
-        </div>
+          <div className="top1 ">
+         
+            <div className="text-block-10 ">
+            <img  style={{marginLeft:"-35px",marginTop:"5px"}}
+                  src="aero1.png"
+                  loading="lazy"
+                  alt="hii"
+                 
+                />
+             
+            </div>
+            <div>
+            <hr className="panel-line"></hr>
+            </div>
+            <div>
+              
+              <h6 className="desc_head" >Hailing from FAANG Companies <br/>& unicorn startups</h6>
+            </div>
+            </div>
+            <div className="top1 ">
+         
+         <div className="text-block-10 ">
+         <img  style={{marginLeft:"-35px"}}
+               src="brief.png"
+               loading="lazy"
+               alt="hii"
+              
+             />
+          
+         </div>
+         <div>
+         <hr className="panel-line"></hr>
+         </div>
+         <div>
+         <h6 className="desc_head">Professional <br/>Interviewers</h6>
+         </div>
+         </div>
+          </div>
         <div className="flex-box center">
-          <div className="bot-1">
-            <div className="text-block-10 div-block-11">
-              Constantly assessed for quality and training needs
-              <br />
-            </div>
-          </div>
-          <div className="top1 marg">
-            <div className="text-block-10 _2">
-              Capable of making wholesome trustworthy evaluations
-              <br />
-            </div>
-          </div>
-        </div>
+        <div className="top1 ">
+         
+         <div className="text-block-10 ">
+         <img  style={{marginLeft:"-35px"}}
+               src="use.png"
+               loading="lazy"
+               alt="hii"
+              
+             />
+          
+         </div>
+         <div>
+         <hr className="panel-line"></hr>
+         </div>
+         <div>
+           <h6 className="desc_head">Constantly accessed for quality <br/>and communication skills</h6>
+         </div>
+         </div>
+         <div className="top1 ">
+         
+         <div className="text-block-10 ">
+         <img  style={{marginLeft:"-35px"}}
+               src="medal.png"
+               loading="lazy"
+               alt="hii"
+              
+             />
+          
+         </div>
+         <div>
+         <hr className="panel-line"></hr>
+         </div>
+         <div>
+           <h6 className="desc_head">Capable of making wholesome <br/>trustworthy evaluations</h6>
+         </div>
+         </div>
+         </div>
+         
       </div>
       <div className="section overlay">
         <div className="container">
@@ -417,10 +505,10 @@ const Index = () => {
               <div className="up1">less than</div>
               <h1 className="heading-11">48</h1>
               <div className="text-block-2">
-                hours interview
+                hours to interview
                 <br />
-                schedule <br />
-                guaranteed
+                from  scheduling
+               
               </div>
             </div>
             <div className="col-3-copy">
@@ -430,282 +518,113 @@ const Index = () => {
                 alt=""
                 className="image-8"
               />
-              <div className="up1">less than</div>
+              <div className="up1">feedback within</div>
               <h1 className="heading-11">4</h1>
               <div className="text-block-2">
                 hours after
                 <br />
                 interview
-                <br />
-                guaranteed
+               
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="section testimonial">
-        <div className="container">
+      <div className="section" >
+        <div className="container" id="testimonials">
           <div className="text-wrapper">
             <h1 className="heading2">SEE WHAT OUR CUSTOMERS HAVE TO SAY</h1>
             <div className="div-block-2" />
           </div>
-          <div
-            data-animation="slide"
-            data-duration={500}
-            data-infinite={1}
-            className="slider w-slider"
-            role="region"
-            aria-label="carousel"
-          >
-            <div className="mask w-slider-mask" id="w-slider-mask-0">
-
-              <Carousel breakPoints={breakpoints}>
-
-                <div
-                  className="slide w-slide"
-                  aria-label="3 of 4"
-                  role="group"
-                  style={{
-                    transform: "translateX(0px)",
-                    opacity: 1,
-                    transition: "transform 500ms ease 0s",
-                  }}
-                >
-                  <div className="card">
-                    <div className="flex-box testimonial">
-                      <div className="left-side">
-                        <img
-                          src={unnamed}
-                          loading="lazy"
-                          alt=""
-                        />
-                        <div className="text-block-3">
-                          Engineering Lead,
-                        <br />
-                        Syfe
-                      </div>
-                      </div>
-                      <div className="right-side">
-                        <div className="text-block-4">
-                          Mukesh
-                        <br />
-                        Gupta
-                      </div>
-                      </div>
-                    </div>
-                    <div className="testimonial-bar" />
-                    <p className="paragraph-2">
-                      "We closed our positions faster and in a cost-efficient manner. Their team was very responsive, flexible, and was able to customize the offering as per our requirement. If you're a startup and looking to speed up your hiring process, do give them a shot."
-                  </p>
-                  </div>
+         
+         <div style={{display:"flex",justifyContent:"center"}}>
+        <div >
+         <img
+                  src="left.png"
+                  loading="lazy"
+                  alt="hii"
+                 
+                />
+                </div>
+                <div >
+                  <img
+                  src="right.png"
+                  loading="lazy"
+                  alt="hii"
+                 
+                />
                 </div>
 
-                <div
-                  className="slide w-slide"
-                  aria-label="3 of 4"
-                  role="group"
-                  style={{
-                    transform: "translateX(0px)",
-                    opacity: 1,
-                    transition: "transform 500ms ease 0s",
-                  }}
-                >
-                  <div className="card">
-                    <div className="flex-box testimonial">
-                      <div className="left-side">
-                        <img
-                          src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073945b51fa454c0f83965e_02.svg"
-                          loading="lazy"
-                          alt=""
-                        />
-                        <div className="text-block-3">
-                          CTO,
-                        <br />
-                        BharatPe
-
-
-                        </div>
-                      </div>
-                      <div className="right-side">
-                        <div className="text-block-4">
-                          Vijay
-                        <br />
-                        Aggarwal
-                        <br />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="testimonial-bar" />
-                    <p className="paragraph-2">
-                      "A word of appreciation for InterviewVector - Their
-                      interviewservice has been a game changer. I have been able
-                      tosignificantly scale my recruitment process. And also
-                      theirpre-vetted sourced candidates have been up to the
-                      mark.Having a partnership with them has significantly
-                      improvedmy time-to-hire and reduced cost-to-hire on several
-                      keyroles while my team has been able to focus on our
-                      coreproduct development. Thank you InterviewVector andthanks
-                      Sachin!"
-                  </p>
-                  </div>
-                </div>
-
-                <div
-                  className="slide w-slide"
-                  aria-label="3 of 4"
-                  role="group"
-                  style={{
-                    transform: "translateX(0px)",
-                    opacity: 1,
-                    transition: "transform 500ms ease 0s",
-                  }}
-                >
-                  <div className="card">
-                    <div className="flex-box testimonial">
-                      <div className="left-side">
-                        <img
-                          src={vector}
-                          loading="lazy"
-                          alt=""
-                        />
-                        <div className="text-block-3">
-                          Director of HR,
-                        <br />
-                        Airmeet
-                      </div>
-                      </div>
-                      <div className="right-side">
-                        <div className="text-block-4">
-                          Meena
-                        <br />
-                        Kumari R.
-                      </div>
-                      </div>
-                    </div>
-                    <div className="testimonial-bar" />
-                    <p className="paragraph-2">
-                      I never knew interview as service existed until i met Sachin Mittal, after I saw InterviewVector's sample interview recordings I was super impressed as their assessment is not only detailed but very insightful and top notch and actually aids in decision making. I was convinced that I am going to save my tech team valuable time and focus on hiring for fitment.
-                      Thanks to Sachin Mittal and team,... I see a long time mutual benefit with you folks.
-
-                      Keep up the good work!
-                  </p>
-                  </div>
-                </div>
-              </Carousel>
-
-
-
-            </div>
-            <div
-              className="w-slider-arrow-left"
-              role="button"
-              tabIndex={0}
-              aria-controls="w-slider-mask-0"
-              aria-label="previous slide"
-            >
-              <div className="icon-2 w-icon-slider-left" />
-            </div>
-            <div
-              className="w-slider-arrow-right"
-              role="button"
-              tabIndex={0}
-              aria-controls="w-slider-mask-0"
-              aria-label="next slide"
-            >
-              <div className="icon w-icon-slider-right" />
-            </div>
-            <div className="slide-nav w-slider-nav w-round">
-              <div
-                className="w-slider-dot w-active"
-                data-wf-ignore
-                aria-label="Show slide 1 of 2"
-                aria-selected="true"
-                role="button"
-                tabIndex={0}
-              />
-              <div
-                className="w-slider-dot"
-                data-wf-ignore
-                aria-label="Show slide 2 of 2"
-                aria-selected="false"
-                role="button"
-                tabIndex={-1}
-              />
-            </div>
-          </div>
+         </div>
+      
+          
         </div>
       </div>
-      <div className="section mockup mar">
+      <div className="section mockup mar" id="abot"  >
         <div className="container">
-          <div className="flex-box">
-            <div className="about">
-              <h3 className="heading-7">ABOUT US</h3>
+          <div className="flex-box" >
+            <div className="about" >
+              <h3 className="heading-7" >ABOUT US</h3>
               <div className="div-block-2 mock-up" />
-              <p className="paragraph">
-                We are visionaries who are on a mission to redefine recruitment.
-                <br />
-                <br />
-                Founded by IITG and IITD alumni - Sachin Mittal and Aashish
-                Mittal.
-                <br />
-                <br />
-                Our objective is to simplify engineer’s lives and make company
-                growth unhindered.
-                <br />
-                <br />
-                We make tech hiring faster, more accurate and less expensive.
-              </p>
+              <div className="bullet w-clearfix">
+                <img
+                  src="aim.png"
+                  loading="lazy"
+                  alt=""
+                  className="image-14"
+                  style={{marginTop:"5px"}}
+                />
+                <div className="text-block-9">
+                Visionaries who are on a mission <br/>to redefine recruitment.
+                </div>
+              </div>
+              <div className="bullet w-clearfix">
+                <img
+                  src="aim.png"
+                  loading="lazy"
+                  alt=""
+                  className="image-14"
+                  style={{marginTop:"5px"}}
+                />
+                <div className="text-block-9">
+                Founded by IIT-Guwahati and IIT-Delhi  <br/> alumni.
+                </div>
+              </div>
+              <div className="bullet w-clearfix">
+                <img
+                  src="aim.png"
+                  loading="lazy"
+                  alt=""
+                  className="image-14"
+                  style={{marginTop:"5px"}}
+                />
+                <div className="text-block-9">
+                Objective is to simplify your engineer’s lives <br/>and make company growth unhindered.
+                </div>
+              </div>
+              <div className="bullet w-clearfix">
+                <img
+                  src="aim.png"
+                  loading="lazy"
+                  alt=""
+                  className="image-14"
+                  style={{marginTop:"5px"}}
+                />
+                <div className="text-block-9">
+                We make tech hiring faster, more accurate  <br/>and less expensive.
+                </div>
+              </div>
+             
             </div>
             <div className="left-mock-up w-clearfix">
-              <div className="f1">
-                <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075e9f2ab2eb021179539ec_f1.jpg"
-                  loading="lazy"
-                  alt=""
-                  className="image-15"
-                />
-                <div className="title">Sachin Mittal</div>
-                <div className="position">CEO</div>
-                <div className="collegr">
-                  IITG - Comp. Science
-                  <br />
-                  2016 Batch
-                </div>
-                <div className="text-block-11">
-                  Ex-Tower Research
-                  <br />
-                   Capital LLC,
-                  <br />
-                  Ex-Eightfold AI
-                </div>
-              </div>
-              <div className="f2">
-                <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075e9f2064bac06dd8d9bfb_f2.jpg"
-                  loading="lazy"
-                  alt=""
-                  className="image-15"
-                />
-                <div className="title">Aashish Mittal</div>
-                <div className="position">CTO</div>
-                <div className="collegr">
-                  IITD - Comp. Science
-                  <br />
-                  2012 Batch
-                </div>
-                <div className="text-block-11">
-                  Soft. Arch. turned Trader,
-                  <br />
-                  Tower Research <br />
-                  Capital LLC
-                </div>
-              </div>
+            
+             <img src="team.png"/>
             </div>
           </div>
         </div>
       </div>
-      <div className="section">
-        <div className="container">
+      <div className="section" id="form" >
+        <div className="container" >
           <div className="flex-box contact">
             <div className="left w-clearfix">
               <div className="div-block-4">
@@ -713,8 +632,8 @@ const Index = () => {
                 <h1 className="heading-14 color">Say HELLO!</h1>
               </div>
               <p className="paragraph-3">
-                To learn more or reach out to us - simply drop us a note and our
-                HR team will contact you at the earliest.
+                To learn more or reach out to us - <br/> Simply drop us a note and our
+                HR team <br/> will contact you at the earliest.
               </p>
               <div className="div-block-6">
                 <div onClick={() => {
@@ -728,42 +647,51 @@ const Index = () => {
                   console.log("Business clicked")
                   setInterviewerForm(false)
                 }} className={interviewerForm ? "div-block-5" : "div-block-7"}>
-                  <div className={interviewerForm ? "text-block-6" : "text-block-5"}>I am a</div>
+                  <div className={interviewerForm ? "text-block-6 col" : "text-block-5 col"}>I am a</div>
                   <h1 className={interviewerForm ? "cont color" : "cont"}>Business</h1>
                 </div>
               </div>
             </div>
 
-            {interviewerForm ? <InterviewerForm onSubmit={sendEmail} /> : <BusinessForm onSubmit={sendEmail} />}
+            {interviewerForm ? <InterviewerForm  /> : <BusinessForm  />}
           </div>
         </div>
       </div>
 
       <div className="section footer-color">
-        <div className="container">
+        <div className="container" style={{marginTop:"-30px"}}>
           <div className="flex-box">
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <div className="footer-col" style={{ width: "200px" }}>
-                <div className="text-block-13">Home</div>
-                <div className="text-block-13 normal" style={{ width: "121px" }}>Our Customers</div>
-                <div className="text-block-13 normal">Services</div>
-                <div className="text-block-13 normal" style={{ width: "121px" }}>Our Panel</div>
+              <div className="" style={{ width: "450px",marginTop:"-30px" }}>
+              <span className="footer-reach">Reach Us</span>
+              <p className="footer-email" style={{marginTop:"30px"}}>contact@interviewvector.com</p>
+              <p className="footer-email">
+                +91-97068-70735
+              </p>
               </div>
-              <div className="footer-col">
-                <div className="text-block-13 normal">Testimonials</div>
-                <div className="text-block-13 normal">About Us</div>
-                <div className="text-block-13 normal" style={{ width: "121px" }}>Request Demo</div>
-                <div className="text-block-13 normal">Login</div>
-              </div>
+          
             </div>
             <div className="footer-col" style={{ textAlign: "right" }}>
-              <div className="text-block-13">Reach Us</div>
-              <div className="text-block-13 normal">contact@interviewvector.com</div>
-              <div className="text-block-13 normal">
-                +91-97068-70735
+             
+              <div style={{display:"flex",flexDirection:"row",justifyContent:"flex-end",marginTop:"-45px"}}>
+                <div style={{marginRight:"30px"}}>
+                <a href="https://www.linkedin.com/company/interviewvector/" target="_blank" rel="noopener noreferrer">  <img src="tweet.png"></img></a>
+                </div>
+                <div>
+                
+                <a href="https://angel.co/company/interviewvector" target="_blank" rel="noopener noreferrer">
+                  <img src="link.png"></img></a>
+                </div>
               </div>
-              <div className="text-block-13 normal">Copyright © 2021 Interviewvector | Gurgaon</div>
+              
+              <div style={{display:"flex",flexDirection:"row",justifyContent:"flex-end",marginTop:"45px"}}>
+              <div className="footer-email">Copyright © 2021</div>
+              <div className="footer-email" style={{marginLeft:"5px"}}>interviewvector</div>
+
+              </div>
+              
             </div>
+            
           </div>
         </div>
       </div>

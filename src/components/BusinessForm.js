@@ -72,19 +72,19 @@ const BusinessForm = ({ onSubmit }) => {
                         </div>
                     </div>
                     <label htmlFor="email" className="lebel">
-                        Where did you learn about us?
+                        Where did you learn about us?<span style={{ color: "red" }}>*</span>
                   </label>
                     <input
                         type="text"
                         className="text-field-2 w-input"
                         maxLength={256}
-                        name="email"
+                        name="learn"
                         data-name="Email"
                         id="email"
                         required
                     />
                     <label htmlFor="message" className="lebel">
-                        Message (if any)
+                        Message (if any)<span style={{ color: "red" }}>*</span>
                   </label>
                     <input
                         type="text"
