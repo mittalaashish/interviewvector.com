@@ -8,7 +8,7 @@ module.exports = {
   /* Your site config here */
   plugins: [
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
         fonts: [
           {
