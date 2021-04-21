@@ -80,7 +80,7 @@ const Index = () => {
                 Home
               </a>
               <a
-                href="#abot"
+                href="#about"
                 className="nav-link w-nav-link"
                 style={{ maxWidth: "1134px" }}
               >
@@ -191,7 +191,7 @@ const Index = () => {
                 className="image"
               />
               <img
-                src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073694ebc149d6b498db3eb_PAYO-LOGO%201.png"
+                src="syfe.png"
                 loading="lazy"
                 width={70}
                 alt=""
@@ -561,7 +561,7 @@ const Index = () => {
           
         </div>
       </div>
-      <div className="section mockup mar" id="abot"  >
+      <div className="section mockup mar" id="about"  >
         <div className="container">
           <div className="flex-box" >
             <div className="about" >

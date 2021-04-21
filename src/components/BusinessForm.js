@@ -2,11 +2,11 @@ import React from 'react'
 import arrow from "../../static/arrow.png"
 
 
-const BusinessForm = ({ onSubmit }) => {
+const BusinessForm = () => {
     return (
         <div className="right">
             <div className="w-form">
-                <form id="email-form" name="email-form" data-name="Email Form" onSubmit={onSubmit}>
+                <form id="contact-form" data-netlify={true} method="POST">
                     <label htmlFor="name" className="lebel">
                         Full Name <span style={{ color: "red" }}>*</span>
                     </label>

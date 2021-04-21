@@ -100,7 +100,7 @@ const InterviewerForm = () => {
                         required
                     />
                     <label htmlFor="message2" className="lebel">
-                        Message (if any)
+                        Message (if any) <span style={{ color: "red" }}>*</span>
             </label>
                     <input
                         type="text"
