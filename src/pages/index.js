@@ -46,23 +46,31 @@ const Index = () => {
   }
 
   const [interviewerForm, setInterviewerForm] = useState(false)
-  const [interviewerState, setInterviewerState] = React.useState({type:"Interviewer"})
-  const [bussinessState, setBussinessState] = React.useState({type:"Business"})
+  const [interviewMessage,setInterviewMessage] = useState('')
+  const [bussinessMessage,setBussinessMessage] = useState('')
+  const [interviewerState, setInterviewerState] = React.useState({type:"Interviewer",interviewer_name:"",year_of_graduation:"",current_employer:"",email:"",contact:"",linkedin_profile:"",message2:""})
+  const interviewReset=()=>{
+    setInterviewerState({type:"Interviewer",interviewer_name:"",year_of_graduation:"",current_employer:"",email:"",contact:"",linkedin_profile:"",message2:""})
+  }
+  const bussinessReset=()=>{
+    setBussinessState({type:"Business",name:"",company:"",role:"",email:"",contact_number:"",learn:"",message:""})
+  }
+  const [bussinessState, setBussinessState] = React.useState({type:"Business",name:"",company:"",role:"",email:"",contact_number:"",learn:"",message:""})
   const handleInterViewerChange = (e) => {
+    setBussinessMessage("")
+    setInterviewMessage("")
     setInterviewerState({ ...interviewerState, [e.target.name]: e.target.value })
   }
   const handleBusinessChange = (e) => {
+    setBussinessMessage("")
+    setInterviewMessage("")
     setBussinessState({ ...bussinessState, [e.target.name]: e.target.value })
   }
   const handleBusinessSubmit = (e) => {
     e.preventDefault()
     const form = e.target
-    console.log(bussinessState)
-    var a=encode({
-          'form-name': form.getAttribute('name'),
-          ...bussinessState,
-        })
-        console.log(a)
+    
+        
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -71,29 +79,33 @@ const Index = () => {
         ...bussinessState,
       }),
     })
-      .then(() => console.log("Hello"))
-      .catch((error) => alert(error))
+      .then(() => {
+        setBussinessMessage("success")
+        bussinessReset()
+      })
+      .catch((error) => {
+        setBussinessMessage("fail")
+      })
   }
   const handleInterviewerSubmit = (e) => {
     e.preventDefault()
-    const form = e.target
-    console.log(interviewerState)
-    console.log(form)
-    var a=encode({
-          'form-name': form.getAttribute('name'),
-          ...interviewerState,
-        })
-        console.log(a)
-    // fetch('/', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    //   body: encode({
-    //     'form-name': form.getAttribute('name'),
-    //     ...state,
-    //   }),
-    // })
-    //   //.then(() => navigate(form.getAttribute('action')))
-    //   .catch((error) => alert(error))
+    const form = e.target;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...interviewerState,
+      }),
+    })
+    
+    .then(() => {
+      setInterviewMessage("success")
+      interviewReset()
+    })
+      .catch((error) => {
+        setInterviewMessage("fail")
+      })
   }
   // const [isInterviwerForm, setInterviewerForm] = useState(false)
 
@@ -692,13 +704,18 @@ const Index = () => {
               <div className="div-block-6">
                 <div onClick={() => {
                   console.log("Business clicked")
+                  setBussinessMessage("")
+                  setInterviewMessage("")
                   setInterviewerForm(true)
+                  
                 }} className={interviewerForm ? "div-block-7" : "div-block-5"}>
                   <div className={interviewerForm ? "text-block-5 col" : "text-block-6 col"}>I am an</div>
                   <h1 className={interviewerForm ? "cont" : "cont color"}>Interviewer</h1>
                 </div>
                 <div onClick={() => {
                   console.log("Business clicked")
+                  setBussinessMessage("")
+                  setInterviewMessage("")
                   setInterviewerForm(false)
                 }} className={interviewerForm ? "div-block-5" : "div-block-7"}>
                   <div className={interviewerForm ? "text-block-6 col" : "text-block-5 col"}>I am a</div>
@@ -707,7 +724,7 @@ const Index = () => {
               </div>
             </div>
 
-            {interviewerForm ? <InterviewerForm  handleInput={handleInterViewerChange} handleForm={handleInterviewerSubmit} /> : <BusinessForm handleInput={handleBusinessChange} handleForm={handleBusinessSubmit}  />}
+            {interviewerForm ? <InterviewerForm  handleInput={handleInterViewerChange} handleForm={handleInterviewerSubmit} data={interviewerState} message={interviewMessage} /> : <BusinessForm handleInput={handleBusinessChange} handleForm={handleBusinessSubmit} data={bussinessState}  message={bussinessMessage}/>}
           </div>
         </div>
       </div>

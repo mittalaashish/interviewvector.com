@@ -3,7 +3,8 @@ import ArrowRightAltOutlinedIcon from '@material-ui/icons/ArrowRightAltOutlined'
 import arrow from "../../static/arrow.png";
 
 
-const InterviewerForm = ({handleInput,handleForm }) => {
+const InterviewerForm = ({handleInput,handleForm,data ,message}) => {
+    console.log(message)
     return (
         <div className="right">
             <div className="w-form">
@@ -18,6 +19,7 @@ const InterviewerForm = ({handleInput,handleForm }) => {
                         maxLength={256}
                         name="interviewer_name"
                         onChange={handleInput}
+                        value={data.interviewer_name}
                         required
                     />
                     <div className="flex-box form">
@@ -29,6 +31,7 @@ const InterviewerForm = ({handleInput,handleForm }) => {
                                 maxLength={256}
                                 name="year_of_graduation"
                                 onChange={handleInput}
+                                value={data.year_of_graduation}
                                 required
                             />
                         </div>
@@ -40,6 +43,7 @@ const InterviewerForm = ({handleInput,handleForm }) => {
                                 maxLength={256}
                                 name="current_employer"
                                 onChange={handleInput}
+                                value={data.current_employer}
                                 required
                             />
                         </div>
@@ -53,6 +57,7 @@ const InterviewerForm = ({handleInput,handleForm }) => {
                                 maxLength={256}
                                 name="email"
                               onChange={handleInput}
+                              value={data.email}
                                 required
                             />
                         </div>
@@ -64,6 +69,7 @@ const InterviewerForm = ({handleInput,handleForm }) => {
                                 maxLength={256}
                                 name="contact"
                                 onChange={handleInput}
+                                value={data.contact}
                                 required
                             />
                         </div>
@@ -92,6 +98,7 @@ const InterviewerForm = ({handleInput,handleForm }) => {
                         maxLength={256}
                         name="linkedin_profile"
                         onChange={handleInput}
+                        value={data.linkedin_profile}
                         required
                     />
                     <label htmlFor="message2" className="lebel">
@@ -103,6 +110,7 @@ const InterviewerForm = ({handleInput,handleForm }) => {
                         maxLength={256}
                         name="message2"
                         onChange={handleInput}
+                        value={data.message2}
                         required
                         id="message2"
                     />
@@ -115,14 +123,17 @@ const InterviewerForm = ({handleInput,handleForm }) => {
                         value={`Submit`}
                     />
                 </form>
+                { message && message=="success" &&
                 <div className="w-form-done">
-                    <div>Thank you! Your submission has been received!</div>
+                    <p>Thank you! Your submission has been received!</p>
                 </div>
+}                 {message && message==="fail" &&
                 <div className="w-form-fail">
                     <div>
                         Oops! Something went wrong while submitting the form.
             </div>
                 </div>
+}
             </div>
         </div>
     )
