@@ -114,7 +114,7 @@ const Index = () => {
           <meta charSet="utf-8" />
           <title>Interview Vector</title>
           {/* <link rel="canonical" href="http://mysite.com/example" /> */}
-          <link rel="icon" href="iv.png" />
+          <link rel="icon" href="ivnew.png" />
         </Helmet>
       </div>
       <div className="hero">
@@ -211,7 +211,7 @@ const Index = () => {
             <div className="right-block">
               <div className="image-wrapper div-block">
                 <img
-                  src="hero.png"
+                  src="ban.png"
                   loading="lazy"
                   sizes="(max-width: 479px) 82vw, (max-width: 767px) 48vw, (max-width: 991px) 55vw, 57vw"
                   width={734}
@@ -697,7 +697,7 @@ const Index = () => {
               </div>
               <p className="paragraph-3">
                 To learn more or reach out to us - <br/> Simply drop us a note and our
-                HR team <br/> will contact you at the earliest.
+                 team <br/> will contact you at the earliest.
               </p>
               <div className="div-block-6">
                 <div onClick={() => {
