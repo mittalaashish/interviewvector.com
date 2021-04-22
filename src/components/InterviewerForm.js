@@ -8,7 +8,7 @@ const InterviewerForm = ({handleInput,handleForm,data ,message}) => {
     return (
         <div className="right">
             <div className="w-form">
-              <form name="interviewer" id="interviewer" data-netlify={true} method="POST" onSubmit={handleForm}>
+              <form name="interviewer" id="interviewer" data-netlify="true" method="POST" onSubmit={handleForm}>
                   <input type="hidden" name="form-name" value="interviewer" />
                     <label htmlFor="name" className="lebel">
                         Full Name <span style={{ color: "red" }}>*</span>
