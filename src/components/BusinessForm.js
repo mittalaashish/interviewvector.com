@@ -2,11 +2,12 @@ import React from 'react'
 import arrow from "../../static/arrow.png"
 
 
-const BusinessForm = () => {
+const BusinessForm = ({handleInput,handleForm }) => {
     return (
         <div className="right">
             <div className="w-form">
-                <form id="contact-form" data-netlify={true} method="POST">
+                <form name="contact" data-netlify={true} method="POST" onSubmit={handleForm}>
+                <input type="hidden" name="contact" value="contact" />
                     <label htmlFor="name" className="lebel">
                         Full Name <span style={{ color: "red" }}>*</span>
                     </label>
@@ -15,7 +16,7 @@ const BusinessForm = () => {
                         className="text-field-2 w-input"
                         maxLength={256}
                         name="name"
-                        data-name="Name"
+                        onChange={handleInput}
                         id="name"
                         required
                     />
@@ -27,7 +28,7 @@ const BusinessForm = () => {
                                 className="text-field-3 w-input"
                                 maxLength={256}
                                 name="company"
-                                data-name="Field"
+                                onChange={handleInput}
                                 id="field"
                                 required
                             />
@@ -39,7 +40,7 @@ const BusinessForm = () => {
                                 className="text-field-4 w-input"
                                 maxLength={256}
                                 name="role"
-                                data-name="Field 2"
+                                onChange={handleInput}
                                 id="field-2"
                                 required
                             />
@@ -53,7 +54,7 @@ const BusinessForm = () => {
                                 className="text-field-3 w-input"
                                 maxLength={256}
                                 name="email"
-                                data-name="Field 4"
+                                onChange={handleInput}
                                 id="field-4"
                                 required
                             />
@@ -65,7 +66,7 @@ const BusinessForm = () => {
                                 className="text-field-4 w-input"
                                 maxLength={256}
                                 name="contact_number"
-                                data-name="Field 2"
+                                onChange={handleInput}
                                 id="field-2"
                                 required
                             />
@@ -79,7 +80,7 @@ const BusinessForm = () => {
                         className="text-field-2 w-input"
                         maxLength={256}
                         name="learn"
-                        data-name="Email"
+                        onChange={handleInput}
                         id="email"
                         required
                     />
@@ -91,7 +92,7 @@ const BusinessForm = () => {
                         className="txt-fld w-input"
                         maxLength={256}
                         name="message"
-                        data-name="Email 2"
+                        onChange={handleInput}
                         id="message"
                         required
                     />

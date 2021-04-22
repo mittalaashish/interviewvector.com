@@ -9,6 +9,11 @@ import vector from "../../static/Vector.svg"
 import emailjs from "emailjs-com"
 
 import "../styles/global.css"
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
 const Index = () => {
   let items = [
@@ -41,7 +46,55 @@ const Index = () => {
   }
 
   const [interviewerForm, setInterviewerForm] = useState(false)
-
+  const [interviewerState, setInterviewerState] = React.useState({type:"Interviewer"})
+  const [bussinessState, setBussinessState] = React.useState({type:"Business"})
+  const handleInterViewerChange = (e) => {
+    setInterviewerState({ ...interviewerState, [e.target.name]: e.target.value })
+  }
+  const handleBusinessChange = (e) => {
+    setBussinessState({ ...bussinessState, [e.target.name]: e.target.value })
+  }
+  const handleBusinessSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    console.log(bussinessState)
+    var a=encode({
+          'form-name': form.getAttribute('name'),
+          ...bussinessState,
+        })
+        console.log(a)
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...bussinessState,
+      }),
+    })
+      .then(() => console.log("Hello"))
+      .catch((error) => alert(error))
+  }
+  const handleInterviewerSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    console.log(interviewerState)
+    console.log(form)
+    var a=encode({
+          'form-name': form.getAttribute('name'),
+          ...interviewerState,
+        })
+        console.log(a)
+    // fetch('/', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    //   body: encode({
+    //     'form-name': form.getAttribute('name'),
+    //     ...state,
+    //   }),
+    // })
+    //   //.then(() => navigate(form.getAttribute('action')))
+    //   .catch((error) => alert(error))
+  }
   // const [isInterviwerForm, setInterviewerForm] = useState(false)
 
   return (
@@ -654,7 +707,7 @@ const Index = () => {
               </div>
             </div>
 
-            {interviewerForm ? <InterviewerForm  /> : <BusinessForm  />}
+            {interviewerForm ? <InterviewerForm  handleInput={handleInterViewerChange} handleForm={handleInterviewerSubmit} /> : <BusinessForm handleInput={handleBusinessChange} handleForm={handleBusinessSubmit}  />}
           </div>
         </div>
       </div>

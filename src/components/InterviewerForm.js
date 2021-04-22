@@ -3,11 +3,12 @@ import ArrowRightAltOutlinedIcon from '@material-ui/icons/ArrowRightAltOutlined'
 import arrow from "../../static/arrow.png";
 
 
-const InterviewerForm = () => {
+const InterviewerForm = ({handleInput,handleForm }) => {
     return (
         <div className="right">
             <div className="w-form">
-                <form id="contact-form" data-netlify={true} method="POST">
+                <form name="contact" data-netlify={true} method="POST" onSubmit={handleForm} >
+                <input type="hidden" name="contact" value="contact" />
                     <label htmlFor="name" className="lebel">
                         Full Name <span style={{ color: "red" }}>*</span>
                     </label>
@@ -16,8 +17,7 @@ const InterviewerForm = () => {
                         className="text-field-2 w-input"
                         maxLength={256}
                         name="interviewer_name"
-                        data-name="Name"
-                        id="name"
+                        onChange={handleInput}
                         required
                     />
                     <div className="flex-box form">
@@ -28,8 +28,7 @@ const InterviewerForm = () => {
                                 className="text-field-3 w-input"
                                 maxLength={256}
                                 name="year_of_graduation"
-                                data-name="Field"
-                                id="field"
+                                onChange={handleInput}
                                 required
                             />
                         </div>
@@ -40,8 +39,7 @@ const InterviewerForm = () => {
                                 className="text-field-4 w-input"
                                 maxLength={256}
                                 name="current_employer"
-                                data-name="Field 2"
-                                id="field-2"
+                                onChange={handleInput}
                                 required
                             />
                         </div>
@@ -54,8 +52,7 @@ const InterviewerForm = () => {
                                 className="text-field-3 w-input"
                                 maxLength={256}
                                 name="email"
-                                data-name="Field 4"
-                                id="field-4"
+                              onChange={handleInput}
                                 required
                             />
                         </div>
@@ -66,8 +63,7 @@ const InterviewerForm = () => {
                                 className="text-field-4 w-input"
                                 maxLength={256}
                                 name="contact"
-                                data-name="Field 2"
-                                id="field-2"
+                                onChange={handleInput}
                                 required
                             />
                         </div>
@@ -95,8 +91,7 @@ const InterviewerForm = () => {
                         className="text-field-2 w-input"
                         maxLength={256}
                         name="linkedin_profile"
-                        data-name="Email"
-                        id="email"
+                        onChange={handleInput}
                         required
                     />
                     <label htmlFor="message2" className="lebel">
@@ -107,9 +102,9 @@ const InterviewerForm = () => {
                         className="txt-fld w-input"
                         maxLength={256}
                         name="message2"
-                        data-name="Email 2"
-                        id="message2"
+                        onChange={handleInput}
                         required
+                        id="message2"
                     />
 
                     <input
