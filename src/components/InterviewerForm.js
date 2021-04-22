@@ -19,6 +19,7 @@ const InterviewerForm = ({handleInput,handleForm,data ,message}) => {
                         maxLength={256}
                         name="interviewer_name"
                         onChange={handleInput}
+                        id="interviewer_name"
                         value={data.interviewer_name}
                         required
                     />
@@ -31,6 +32,7 @@ const InterviewerForm = ({handleInput,handleForm,data ,message}) => {
                                 maxLength={256}
                                 name="year_of_graduation"
                                 onChange={handleInput}
+                                id="year_of_graduation"
                                 value={data.year_of_graduation}
                                 required
                             />
@@ -43,6 +45,7 @@ const InterviewerForm = ({handleInput,handleForm,data ,message}) => {
                                 maxLength={256}
                                 name="current_employer"
                                 onChange={handleInput}
+                                id="current_employer"
                                 value={data.current_employer}
                                 required
                             />
@@ -57,6 +60,7 @@ const InterviewerForm = ({handleInput,handleForm,data ,message}) => {
                                 maxLength={256}
                                 name="email"
                               onChange={handleInput}
+                              id="interviewer_email"
                               value={data.email}
                                 required
                             />
@@ -69,6 +73,7 @@ const InterviewerForm = ({handleInput,handleForm,data ,message}) => {
                                 maxLength={256}
                                 name="contact"
                                 onChange={handleInput}
+                                id="interviewer_contact"
                                 value={data.contact}
                                 required
                             />
@@ -98,6 +103,7 @@ const InterviewerForm = ({handleInput,handleForm,data ,message}) => {
                         maxLength={256}
                         name="linkedin_profile"
                         onChange={handleInput}
+                        id="linked_profile"
                         value={data.linkedin_profile}
                         required
                     />
