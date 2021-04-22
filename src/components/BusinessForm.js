@@ -7,7 +7,7 @@ const BusinessForm = ({handleInput,handleForm ,data,message}) => {
     return (
         <div className="right">
             <div className="w-form">
-                <form name="contact" data-netlify={true} method="POST" onSubmit={handleForm}>
+              <form name="contact" id="contact" data-netlify={true} method="POST" onSubmit={handleForm}>
                   <input type="hidden" name="form-name" value="contact" />
                     <label htmlFor="name" className="lebel">
                         Full Name <span style={{ color: "red" }}>*</span>
