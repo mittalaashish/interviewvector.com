@@ -123,7 +123,6 @@ const InterviewerForm = ({handleInput,handleForm,data ,message}) => {
 
                     <input
                         type="submit"
-                        defaultValue="SUBMIT"
                         data-wait="Please wait..."
                         className="submit-button-2 w-button"
                         value={`Submit`}
