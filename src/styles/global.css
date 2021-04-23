@@ -1054,11 +1054,16 @@ color: #3D3D3D;
 
 .paragraph-3 {
   max-width: 460px;
-  padding-top: 40px;
-  padding-bottom: 118px;
+  padding-top: 20px;
+  padding-bottom: 10px;
   line-height: 30px;
 }
-
+.paragraph-15 {
+  max-width: 460px;
+  padding-top: 20px;
+  padding-bottom: 120px;
+  line-height: 30px;
+}
 .div-block-4 {
   max-width: 460px;
   height: 198px;
@@ -1117,6 +1122,7 @@ color: #3D3D3D;
   color: #fff;
   font-size: 30px;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 .cont.color {
@@ -1419,7 +1425,7 @@ input.w-button {
 }
 
 .section.footer-color {
-  padding-bottom: 40px;
+  padding-bottom: 25px;
   background-color: #2c2c2c;
 }
 
@@ -1508,7 +1514,32 @@ color: #FFFFFF;
   display: none;
 }
 
+.suc-message{
+  font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 155.1%;
+/* or 22px */
 
+letter-spacing: 0.025em;
+margin-left: 20px;
+color: #133DB3;
+
+}
+.fail-message{
+  font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 155.1%;
+/* or 22px */
+
+letter-spacing: 0.025em;
+
+color: #E23939;
+margin-left: 20px;
+}
 
 
 
