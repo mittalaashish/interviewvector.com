@@ -3,8 +3,7 @@ import ArrowRightAltOutlinedIcon from '@material-ui/icons/ArrowRightAltOutlined'
 import arrow from "../../static/arrow.png";
 
 
-const InterviewerForm = ({handleInput,handleForm,data ,message}) => {
-    console.log(message)
+const InterviewerForm = ({handleInput,handleForm,data }) => {
     return (
         <div className="right">
             <div className="w-form">
@@ -120,25 +119,17 @@ const InterviewerForm = ({handleInput,handleForm,data ,message}) => {
                         required
                         id="message2"
                     />
-
+               
                     <input
                         type="submit"
                         data-wait="Please wait..."
                         className="submit-button-2 w-button"
                         value={`Submit`}
                     />
+               
                 </form>
-                { message && message=="success" &&
-                <div className="w-form-done">
-                    <p>Thank you! Your submission has been received!</p>
-                </div>
-}                 {message && message==="fail" &&
-                <div className="w-form-fail">
-                    <div>
-                        Oops! Something went wrong while submitting the form.
-            </div>
-                </div>
-}
+                
+                
             </div>
         </div>
     )

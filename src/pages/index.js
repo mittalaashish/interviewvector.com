@@ -13,9 +13,8 @@ function encode(data) {
 }
 
 const Index = () => {
-  const [interviewerForm, setInterviewerForm] = useState(true)
-  const [interviewMessage,setInterviewMessage] = useState('')
-  const [bussinessMessage,setBussinessMessage] = useState('')
+  const [interviewerForm, setInterviewerForm] = useState(false)
+  const [message,setMessage] = useState('')
   const [interviewerState, setInterviewerState] = React.useState({type:"Interviewer",interviewer_name:"",year_of_graduation:"",current_employer:"",email:"",contact:"",linkedin_profile:"",message2:""})
   const interviewReset=()=>{
     setInterviewerState({type:"Interviewer",interviewer_name:"",year_of_graduation:"",current_employer:"",email:"",contact:"",linkedin_profile:"",message2:""})
@@ -25,13 +24,11 @@ const Index = () => {
   }
   const [bussinessState, setBussinessState] = React.useState({type:"Business",name:"",company:"",role:"",email:"",contact_number:"",learn:"",message:""})
   const handleInterViewerChange = (e) => {
-    setBussinessMessage("")
-    setInterviewMessage("")
+    setMessage('')
     setInterviewerState({ ...interviewerState, [e.target.name]: e.target.value })
   }
   const handleBusinessChange = (e) => {
-    setBussinessMessage("")
-    setInterviewMessage("")
+    setMessage('')
     setBussinessState({ ...bussinessState, [e.target.name]: e.target.value })
   }
   const handleBusinessSubmit = (e) => {
@@ -46,11 +43,11 @@ const Index = () => {
       }),
     })
       .then(() => {
-        setBussinessMessage("success")
+        setMessage("success")
         bussinessReset()
       })
       .catch((error) => {
-        setBussinessMessage("fail")
+        setMessage("fail")
       })
   }
   const handleInterviewerSubmit = (e) => {
@@ -66,11 +63,11 @@ const Index = () => {
     })
 
     .then(() => {
-      setInterviewMessage("success")
+      setMessage("success")
       interviewReset()
     })
       .catch((error) => {
-        setInterviewMessage("fail")
+        setMessage("fail")
       })
   }
 
@@ -81,7 +78,7 @@ const Index = () => {
           <meta charSet="utf-8" />
           <title>Interview Vector</title>
           {/* <link rel="canonical" href="http://mysite.com/example" /> */}
-          <link rel="icon" href="iv.png" />
+          <link rel="icon" href="ivnew.png" />
         </Helmet>
       </div>
       <div
@@ -161,7 +158,7 @@ const Index = () => {
         <div className="container">
           <div className="flex-box">
             <div className="right-mock-up">
-              <h3 className="heading-7">INTERVIEW AS SERVICE</h3>
+              <h3 className="heading-7">INTERVIEW AS A SERVICE</h3>
               <div className="div-block-2 mock-up" />
               <div className="bullet w-clearfix">
                 <img
@@ -466,7 +463,7 @@ const Index = () => {
          <div style={{display:"flex",justifyContent:"center"}}>
         <div >
          <img
-                  src="left.png"
+                  src="left1.png"
                   loading="lazy"
                   alt="hii"
 
@@ -486,7 +483,7 @@ const Index = () => {
 
         </div>
       </div>
-      <div className="section mockup mar" id="about"  >
+      <div className="section mockup mar" id="about" style={{marginTop:"-90px"}}  >
         <div className="container">
           <div className="flex-box" >
             <div className="about" >
@@ -557,15 +554,37 @@ const Index = () => {
                 <h1 className="heading-12">Don’t be shy</h1>
                 <h1 className="heading-14 color">Say HELLO!</h1>
               </div>
-              <p className="paragraph-3">
+              <p className={message?"paragraph-3":"paragraph-15"}>
                 To learn more or reach out to us - <br/> Simply drop us a note and our
-                HR team <br/> will contact you at the earliest.
+                 team <br/> will contact you at the earliest.
               </p>
+             {message ==="success" && < div style={{marginTop:"30px",display:"flex",flexDirection:"row",marginBottom:"30px"}}>
+              <div>
+                <img src="check.png"/>
+                </div>
+                <div >
+                  <p className="suc-message">
+                    Thank You for reaching out to us! <br/>
+                    Your submission has been recieved
+                  </p>
+</div>
+              </div>
+}
+{message ==="fail" && < div style={{marginTop:"30px",display:"flex",flexDirection:"row",marginBottom:"30px"}}>
+              <div>
+                <img src="cross.png"/>
+                </div>
+                <div >
+                  <p className="fail-message">
+                    Sorry for inconvenience.<br/>Your form submission was unsuccessful!
+                  </p>
+</div>
+              </div>
+}
               <div className="div-block-6">
                 <div onClick={() => {
                   console.log("Business clicked")
-                  setBussinessMessage("")
-                  setInterviewMessage("")
+                  setMessage("")
                   setInterviewerForm(true)
 
                 }} className={interviewerForm ? "div-block-7" : "div-block-5"}>
@@ -574,8 +593,7 @@ const Index = () => {
                 </div>
                 <div onClick={() => {
                   console.log("Business clicked")
-                  setBussinessMessage("")
-                  setInterviewMessage("")
+                  setMessage("")
                   setInterviewerForm(false)
                 }} className={interviewerForm ? "div-block-5" : "div-block-7"}>
                   <div className={interviewerForm ? "text-block-6 col" : "text-block-5 col"}>I am a</div>
@@ -584,13 +602,13 @@ const Index = () => {
               </div>
             </div>
 
-            {interviewerForm ? <InterviewerForm  handleInput={handleInterViewerChange} handleForm={handleInterviewerSubmit} data={interviewerState} message={interviewMessage} /> : <BusinessForm handleInput={handleBusinessChange} handleForm={handleBusinessSubmit} data={bussinessState}  message={bussinessMessage}/>}
+            {interviewerForm ? <InterviewerForm  handleInput={handleInterViewerChange} handleForm={handleInterviewerSubmit} data={interviewerState}  /> : <BusinessForm handleInput={handleBusinessChange} handleForm={handleBusinessSubmit} data={bussinessState}  />}
           </div>
         </div>
       </div>
 
       <div className="section footer-color">
-        <div className="container" style={{marginTop:"-30px"}}>
+        <div className="container" style={{marginTop:"-40px"}}>
           <div className="flex-box">
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div className="" style={{ width: "450px",marginTop:"-30px" }}>

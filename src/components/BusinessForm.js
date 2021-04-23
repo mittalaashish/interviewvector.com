@@ -2,7 +2,7 @@ import React from 'react'
 import arrow from "../../static/arrow.png"
 
 
-const BusinessForm = ({handleInput,handleForm ,data,message}) => {
+const BusinessForm = ({handleInput,handleForm ,data}) => {
     console.log(data)
     return (
         <div className="right">
@@ -112,17 +112,7 @@ const BusinessForm = ({handleInput,handleForm ,data,message}) => {
                         className="submit-button-2 w-button"
                     />
                 </form>
-                {  message && message==="success" &&
-                <div className="w-form-done">
-                    <div>Thank you! Your submission has been received!</div>
-                </div>
-}      {  message && message==="fail" &&
-                <div className="w-form-fail">
-                    <div>
-                        Oops! Something went wrong while submitting the form.
-                  </div>
-                </div>
-}
+         
             </div>
         </div>
     )
