@@ -296,7 +296,7 @@ const Index = () => {
         <div className="container">
           <div className="flex-box">
             <div className="right-mock-up">
-              <h3 className="heading-7">INTERVIEW AS SERVICE</h3>
+              <h3 className="heading-7">INTERVIEW AS A SERVICE</h3>
               <div className="div-block-2 mock-up" />
               <div className="bullet w-clearfix">
                 <img
