@@ -1,12 +1,9 @@
 import React, { useState } from "react"
-import { FaArrowRight } from 'react-icons/fa';
-import Carousel from 'react-elastic-carousel';
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet";
+import Hero from "../components/Hero";
+import Brands from "../components/Brands";
 import BusinessForm from "../components/BusinessForm";
 import InterviewerForm from "../components/InterviewerForm";
-import unnamed from "../../static/unnamed 1.svg"
-import vector from "../../static/Vector.svg"
-import emailjs from "emailjs-com"
 
 import "../styles/global.css"
 function encode(data) {
@@ -16,35 +13,6 @@ function encode(data) {
 }
 
 const Index = () => {
-  let items = [
-    { id: 1, title: 'item #1' },
-    { id: 2, title: 'item #2' },
-    { id: 3, title: 'item #3' },
-    { id: 4, title: 'item #4' },
-    { id: 5, title: 'item #5' }
-  ]
-
-  const breakpoints = [
-    { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 2 },
-    { width: 768, itemsToShow: 3 },
-    { width: 1200, itemsToShow: 4 },
-
-  ]
-
-  const sendEmail = (e) => {
-    console.log(e.target)
-    e.preventDefault();
-    emailjs.sendForm('service_mx1wsgn', 'template_vpsh82k', e.target, 'user_vuffQ061MZ8EwO6mikJIc')
-      .then((result) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
-
-    e.target.reset()
-  }
-
   const [interviewerForm, setInterviewerForm] = useState(true)
   const [interviewMessage,setInterviewMessage] = useState('')
   const [bussinessMessage,setBussinessMessage] = useState('')
@@ -105,7 +73,6 @@ const Index = () => {
         setInterviewMessage("fail")
       })
   }
-  // const [isInterviwerForm, setInterviewerForm] = useState(false)
 
   return (
     <div>
@@ -117,184 +84,79 @@ const Index = () => {
           <link rel="icon" href="iv.png" />
         </Helmet>
       </div>
-      <div className="hero">
-        <div
-          data-collapse="medium"
-          data-animation="default"
-          data-duration={400}
-          role="banner"
-          className="navbar w-nav"
-          id="nav-section"
-        >
-          <div className="container w-container" >
-            <a href="#" className="brand w-nav-brand">
-              <img
-                src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073439ed222cb39f8564bf9_brand.svg"
-                loading="lazy"
-                alt=""
-              />
-            </a>
-            <nav role="navigation" className="w-nav-menu">
-              <a
-                href="#home"
-                className="nav-link w-nav-link"
-                style={{ maxWidth: "1134px" }}
-              >
-                Home
-              </a>
-              <a
-                href="#about"
-                className="nav-link w-nav-link"
-                style={{ maxWidth: "1134px" }}
-              >
-                About
-              </a>
-              <a
-                href="#service"
-                className="nav-link w-nav-link"
-                style={{ maxWidth: "1134px" }}
-              >
-                Services
-              </a>
-
-              <a
-               href="https://app.interviewvector.com/" target="_blank" rel="noopener noreferrer"
-                className="nav-link w-nav-link"
-                style={{ maxWidth: "1134px" }}
-              >
-                Log In
-              </a>
-              <a
-                
-                href="#form"
-                className="nav-link button w-nav-link"
-                style={{ maxWidth: "1134px" }}
-              >
-                Get In Touch
-              </a>
-            </nav>
-            <div
-              className="w-nav-button"
-              style={{ WebkitUserSelect: "text" }}
-              aria-label="menu"
-              role="button"
-              tabIndex={0}
-              aria-controls="w-nav-overlay-0"
-              aria-haspopup="menu"
-              aria-expanded="false"
+      <div
+        data-collapse="medium"
+        data-animation="default"
+        data-duration={400}
+        role="banner"
+        className="navbar w-nav"
+        id="nav-section"
+      >
+        <div className="container w-container" >
+          <a href="#" className="brand w-nav-brand">
+            <img
+              src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073439ed222cb39f8564bf9_brand.svg"
+              loading="lazy"
+              alt=""
+            />
+          </a>
+          <nav role="navigation" className="w-nav-menu">
+            <a
+              href="#home"
+              className="nav-link w-nav-link"
+              style={{ maxWidth: "1134px" }}
             >
-              <div className="w-icon-nav-menu" />
-            </div>
-          </div>
-          <div className="w-nav-overlay" data-wf-ignore id="w-nav-overlay-0" />
-        </div>
-        <div className="container" style={{marginTop:"100px"}} id="home">
-          <div className="flex-box" >
-            <div className="left-block">
-              <div className="title-with-background">
-                <h1 className="heading-3">HIRE RIGHT. </h1>
-              </div>
-              <h1 className="heading">HIRE FAST.</h1>
-              <p className="paragraph-4">
-                Build talent pipelines without compromising on business growth time. Our interview-as-a-service platform provides faster, more accurate hiring rate at lower cost and lesser time . Being a talented engineer does not guarantee expertise in interviewing.
-              </p>
-              <div className="hero-button">
-               <a href="#form" style={{textDecoration:"none"}}><div className="text-block bold">  Request a demo</div></a>
-                <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/607374bb03881b255b7b2bff_primary%20arrow.svg"
-                  loading="lazy"
-                  alt=""
-                  className="image-6"
-                />
-              </div>
-            </div>
-            <div className="right-block">
-              <div className="image-wrapper div-block">
-                <img
-                  src="hero.png"
-                  loading="lazy"
-                  sizes="(max-width: 479px) 82vw, (max-width: 767px) 48vw, (max-width: 991px) 55vw, 57vw"
-                  width={734}
-                  
-                  alt=""
-                  className="image-13"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="section _1" style={{marginTop:"-40px"}}>
-        <div className="container">
-          <div className="text-wrapper">
-            <h1 className="heading2">BRANDS TRUSTING US</h1>
-            <div className="div-block-2" />
-          </div>
-          <div className="flex-box logo">
-            <div className="logo-wrapper">
-              <img
-                src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073695722bcca011bb8419d_BharatPe.png"
-                loading="lazy"
-                width={116}
-                alt=""
-                className="image-5"
-              />
-              <img
-                src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073694f22bcca3179b84172_pagarbook.png"
-                loading="lazy"
-                width={102}
-                alt=""
-                className="image-4"
-              />
-              <img
-                src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073695b55e0d1fcc6923c7b_Indiagold.png"
-                loading="lazy"
-                width={199}
-                alt=""
-                className="image"
-              />
-              <img
-                src="syfe.png"
-                loading="lazy"
-                width={70}
-                alt=""
-                className="image-3"
-              />
-              <img
-                src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073694fed8dc60e2bd3a16f_MindTickle.png"
-                loading="lazy"
-                width={70}
-                sizes="(max-width: 479px) 100vw, 270px"
-                srcSet="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073694fed8dc60e2bd3a16f_MindTickle-p-500.png 500w, https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073694fed8dc60e2bd3a16f_MindTickle.png 538w"
-                alt=""
-                className="image-2"
-              />
-            </div>
-          </div>
-          <div className="wrapper">
-            <h3 className="heading-5">and 50+ </h3>
-            <div className="div-block-3">
-              <h3 className="heading-6"> more startups</h3>
-            </div>
-          </div>
-          <div className="wrapper">
-            <div className="secondary-button">
-            <a href="#testimonials" style={{textDecoration:"none"}}> <div className="text-block">
-                See what our customers have to say
-              </div>
-              </a>
-              <img
-                src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/607374bc2ba2bf82923693d5_secondary%20arrow.svg"
-                loading="lazy"
-                alt=""
-                className="image-6"
-              />
-             
-            </div>
-           
+              Home
+            </a>
+            <a
+              href="#about"
+              className="nav-link w-nav-link"
+              style={{ maxWidth: "1134px" }}
+            >
+              About
+            </a>
+            <a
+              href="#service"
+              className="nav-link w-nav-link"
+              style={{ maxWidth: "1134px" }}
+            >
+              Services
+            </a>
+
+            <a
+             href="https://app.interviewvector.com/" target="_blank" rel="noopener noreferrer"
+              className="nav-link w-nav-link"
+              style={{ maxWidth: "1134px" }}
+            >
+              Log In
+            </a>
+            <a
+
+              href="#form"
+              className="nav-link button w-nav-link"
+              style={{ maxWidth: "1134px" }}
+            >
+              Get In Touch
+            </a>
+          </nav>
+          <div
+            className="w-nav-button"
+            style={{ WebkitUserSelect: "text" }}
+            aria-label="menu"
+            role="button"
+            tabIndex={0}
+            aria-controls="w-nav-overlay-0"
+            aria-haspopup="menu"
+            aria-expanded="false"
+          >
+            <div className="w-icon-nav-menu" />
           </div>
         </div>
       </div>
+
+      <Hero/>
+      <Brands/>
+
       <div className="section mockup mockup3" id="service" >
         <div className="container">
           <div className="flex-box">
@@ -441,17 +303,17 @@ const Index = () => {
         <h1 className="heading2 panel">OUR INTERVIEWING PANEL</h1>
         <div className="div-block-2 small" />
         <div className="flex-box center bot">
-        
+
           <div className="top1 ">
-         
+
             <div className="text-block-10 ">
             <img  style={{marginLeft:"-35px"}}
                   src="desc1.png"
                   loading="lazy"
                   alt="hii"
-                 
+
                 />
-             
+
             </div>
             <div>
             <hr className="panel-line"></hr>
@@ -459,37 +321,37 @@ const Index = () => {
             <div>
               <h6 className="desc_head">Experts from multiple <br/>technology  domains</h6>
             </div>
-            
+
           </div>
           <div className="top1 ">
-         
+
             <div className="text-block-10 ">
             <img  style={{marginLeft:"-35px",marginTop:"5px"}}
                   src="aero1.png"
                   loading="lazy"
                   alt="hii"
-                 
+
                 />
-             
+
             </div>
             <div>
             <hr className="panel-line"></hr>
             </div>
             <div>
-              
+
               <h6 className="desc_head" >Hailing from FAANG Companies <br/>& unicorn startups</h6>
             </div>
             </div>
             <div className="top1 ">
-         
+
          <div className="text-block-10 ">
          <img  style={{marginLeft:"-35px"}}
                src="brief.png"
                loading="lazy"
                alt="hii"
-              
+
              />
-          
+
          </div>
          <div>
          <hr className="panel-line"></hr>
@@ -501,15 +363,15 @@ const Index = () => {
           </div>
         <div className="flex-box center">
         <div className="top1 ">
-         
+
          <div className="text-block-10 ">
          <img  style={{marginLeft:"-35px"}}
                src="use.png"
                loading="lazy"
                alt="hii"
-              
+
              />
-          
+
          </div>
          <div>
          <hr className="panel-line"></hr>
@@ -519,15 +381,15 @@ const Index = () => {
          </div>
          </div>
          <div className="top1 ">
-         
+
          <div className="text-block-10 ">
          <img  style={{marginLeft:"-35px"}}
                src="medal.png"
                loading="lazy"
                alt="hii"
-              
+
              />
-          
+
          </div>
          <div>
          <hr className="panel-line"></hr>
@@ -537,7 +399,7 @@ const Index = () => {
          </div>
          </div>
          </div>
-         
+
       </div>
       <div className="section overlay">
         <div className="container">
@@ -572,7 +434,7 @@ const Index = () => {
                 hours to interview
                 <br />
                 from  scheduling
-               
+
               </div>
             </div>
             <div className="col-3-copy">
@@ -588,7 +450,7 @@ const Index = () => {
                 hours after
                 <br />
                 interview
-               
+
               </div>
             </div>
           </div>
@@ -600,14 +462,14 @@ const Index = () => {
             <h1 className="heading2">SEE WHAT OUR CUSTOMERS HAVE TO SAY</h1>
             <div className="div-block-2" />
           </div>
-         
+
          <div style={{display:"flex",justifyContent:"center"}}>
         <div >
          <img
                   src="left.png"
                   loading="lazy"
                   alt="hii"
-                 
+
                 />
                 </div>
                 <div >
@@ -615,13 +477,13 @@ const Index = () => {
                   src="right.png"
                   loading="lazy"
                   alt="hii"
-                 
+
                 />
                 </div>
 
          </div>
-      
-          
+
+
         </div>
       </div>
       <div className="section mockup mar" id="about"  >
@@ -678,10 +540,10 @@ const Index = () => {
                 We make tech hiring faster, more accurate  <br/>and less expensive.
                 </div>
               </div>
-             
+
             </div>
             <div className="left-mock-up w-clearfix">
-            
+
              <img src="team.png"/>
             </div>
           </div>
@@ -705,7 +567,7 @@ const Index = () => {
                   setBussinessMessage("")
                   setInterviewMessage("")
                   setInterviewerForm(true)
-                  
+
                 }} className={interviewerForm ? "div-block-7" : "div-block-5"}>
                   <div className={interviewerForm ? "text-block-5 col" : "text-block-6 col"}>I am an</div>
                   <h1 className={interviewerForm ? "cont" : "cont color"}>Interviewer</h1>
@@ -738,29 +600,29 @@ const Index = () => {
                 +91-97068-70735
               </p>
               </div>
-          
+
             </div>
             <div className="footer-col" style={{ textAlign: "right" }}>
-             
+
               <div style={{display:"flex",flexDirection:"row",justifyContent:"flex-end",marginTop:"-45px"}}>
                 <div style={{marginRight:"30px"}}>
                 <a href="https://www.linkedin.com/company/interviewvector/" target="_blank" rel="noopener noreferrer">  <img src="tweet.png"></img></a>
                 </div>
                 <div>
-                
+
                 <a href="https://angel.co/company/interviewvector" target="_blank" rel="noopener noreferrer">
                   <img src="link.png"></img></a>
                 </div>
               </div>
-              
+
               <div style={{display:"flex",flexDirection:"row",justifyContent:"flex-end",marginTop:"45px"}}>
               <div className="footer-email">Copyright © 2021</div>
               <div className="footer-email" style={{marginLeft:"5px"}}>interviewvector</div>
 
               </div>
-              
+
             </div>
-            
+
           </div>
         </div>
       </div>
