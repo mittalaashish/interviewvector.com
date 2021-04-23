@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_hello_world=self.webpackChunkgatsby_starter_hello_world||[]).push([[216],{1894:function(e,t,l){"use strict";l.r(t),l.d(t,{default:function(){return a}});var r=l(7294),n=l(8227);var a=function(){return r.createElement(n.Z,null,r.createElement("div",{className:"projects-module--portfolio--I0qeS"},r.createElement("h2",null,"Portfolio"),r.createElement("h3",null,"Projects & Websites I've Created")))}}}]);
+//# sourceMappingURL=component---src-pages-projects-index-js-8d93ca5a54d4ccaa0028.js.map
