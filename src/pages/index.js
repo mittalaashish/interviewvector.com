@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Helmet } from "react-helmet";
+import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Brands from "../components/Brands";
 import BusinessForm from "../components/BusinessForm";
@@ -81,76 +82,77 @@ const Index = () => {
           <link rel="icon" href="ivnew.png" />
         </Helmet>
       </div>
-      <div
-        data-collapse="medium"
-        data-animation="default"
-        data-duration={400}
-        role="banner"
-        className="navbar w-nav"
-        id="nav-section"
-      >
-        <div className="container w-container" >
-          <a href="#" className="brand w-nav-brand">
-            <img
-              src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073439ed222cb39f8564bf9_brand.svg"
-              loading="lazy"
-              alt=""
-            />
-          </a>
-          <nav role="navigation" className="w-nav-menu">
-            <a
-              href="#home"
-              className="nav-link w-nav-link"
-              style={{ maxWidth: "1134px" }}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="nav-link w-nav-link"
-              style={{ maxWidth: "1134px" }}
-            >
-              About
-            </a>
-            <a
-              href="#service"
-              className="nav-link w-nav-link"
-              style={{ maxWidth: "1134px" }}
-            >
-              Services
-            </a>
+      {/*<div*/}
+      {/*  data-collapse="medium"*/}
+      {/*  data-animation="default"*/}
+      {/*  data-duration={400}*/}
+      {/*  role="banner"*/}
+      {/*  className="navbar w-nav"*/}
+      {/*  id="nav-section"*/}
+      {/*>*/}
+      {/*  <div className="container w-container" >*/}
+      {/*    <a href="#" className="brand w-nav-brand">*/}
+      {/*      <img*/}
+      {/*        src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6073439ed222cb39f8564bf9_brand.svg"*/}
+      {/*        loading="lazy"*/}
+      {/*        alt=""*/}
+      {/*      />*/}
+      {/*    </a>*/}
+      {/*    <nav role="navigation" className="w-nav-menu">*/}
+      {/*      <a*/}
+      {/*        href="#home"*/}
+      {/*        className="nav-link w-nav-link"*/}
+      {/*        style={{ maxWidth: "1134px" }}*/}
+      {/*      >*/}
+      {/*        Home*/}
+      {/*      </a>*/}
+      {/*      <a*/}
+      {/*        href="#about"*/}
+      {/*        className="nav-link w-nav-link"*/}
+      {/*        style={{ maxWidth: "1134px" }}*/}
+      {/*      >*/}
+      {/*        About*/}
+      {/*      </a>*/}
+      {/*      <a*/}
+      {/*        href="#service"*/}
+      {/*        className="nav-link w-nav-link"*/}
+      {/*        style={{ maxWidth: "1134px" }}*/}
+      {/*      >*/}
+      {/*        Services*/}
+      {/*      </a>*/}
 
-            <a
-             href="https://app.interviewvector.com/" target="_blank" rel="noopener noreferrer"
-              className="nav-link w-nav-link"
-              style={{ maxWidth: "1134px" }}
-            >
-              Log In
-            </a>
-            <a
+      {/*      <a*/}
+      {/*       href="https://app.interviewvector.com/" target="_blank" rel="noopener noreferrer"*/}
+      {/*        className="nav-link w-nav-link"*/}
+      {/*        style={{ maxWidth: "1134px" }}*/}
+      {/*      >*/}
+      {/*        Log In*/}
+      {/*      </a>*/}
+      {/*      <a*/}
 
-              href="#form"
-              className="nav-link button w-nav-link"
-              style={{ maxWidth: "1134px" }}
-            >
-              Get In Touch
-            </a>
-          </nav>
-          <div
-            className="w-nav-button"
-            style={{ WebkitUserSelect: "text" }}
-            aria-label="menu"
-            role="button"
-            tabIndex={0}
-            aria-controls="w-nav-overlay-0"
-            aria-haspopup="menu"
-            aria-expanded="false"
-          >
-            <div className="w-icon-nav-menu" />
-          </div>
-        </div>
-      </div>
+      {/*        href="#form"*/}
+      {/*        className="nav-link button w-nav-link"*/}
+      {/*        style={{ maxWidth: "1134px" }}*/}
+      {/*      >*/}
+      {/*        Get In Touch*/}
+      {/*      </a>*/}
+      {/*    </nav>*/}
+      {/*    <div*/}
+      {/*      className="w-nav-button"*/}
+      {/*      style={{ WebkitUserSelect: "text" }}*/}
+      {/*      aria-label="menu"*/}
+      {/*      role="button"*/}
+      {/*      tabIndex={0}*/}
+      {/*      aria-controls="w-nav-overlay-0"*/}
+      {/*      aria-haspopup="menu"*/}
+      {/*      aria-expanded="false"*/}
+      {/*    >*/}
+      {/*      <div className="w-icon-nav-menu" />*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
 
+      <Navbar/>
       <Hero/>
       <Brands/>
 

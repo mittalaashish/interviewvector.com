@@ -82,7 +82,7 @@ const HeroContentDesktop = () => {
 
 export default () => {
     return (
-      <Container className="hero-section" >
+      <Container id="home" className="hero-section" >
           <HeroContentMobile />
           <HeroContentDesktop />
       </Container>
