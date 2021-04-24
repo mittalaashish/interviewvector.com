@@ -3,75 +3,12 @@ import { Helmet } from "react-helmet";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Brands from "../components/Brands";
-import BusinessForm from "../components/BusinessForm";
-import InterviewerForm from "../components/InterviewerForm";
+import Platform from "../components/Platform";
+import ContactForm from "../components/ContactForm";
 
 import "../styles/global.css"
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
 
 const Index = () => {
-  const [interviewerForm, setInterviewerForm] = useState(false)
-  const [message,setMessage] = useState('')
-  const [interviewerState, setInterviewerState] = React.useState({type:"Interviewer",interviewer_name:"",year_of_graduation:"",current_employer:"",email:"",contact:"",linkedin_profile:"",message2:""})
-  const interviewReset=()=>{
-    setInterviewerState({type:"Interviewer",interviewer_name:"",year_of_graduation:"",current_employer:"",email:"",contact:"",linkedin_profile:"",message2:""})
-  }
-  const bussinessReset=()=>{
-    setBussinessState({type:"Business",name:"",company:"",role:"",email:"",contact_number:"",learn:"",message:""})
-  }
-  const [bussinessState, setBussinessState] = React.useState({type:"Business",name:"",company:"",role:"",email:"",contact_number:"",learn:"",message:""})
-  const handleInterViewerChange = (e) => {
-    setMessage('')
-    setInterviewerState({ ...interviewerState, [e.target.name]: e.target.value })
-  }
-  const handleBusinessChange = (e) => {
-    setMessage('')
-    setBussinessState({ ...bussinessState, [e.target.name]: e.target.value })
-  }
-  const handleBusinessSubmit = (e) => {
-    e.preventDefault()
-    const form = e.target
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...bussinessState,
-      }),
-    })
-      .then(() => {
-        setMessage("success")
-        bussinessReset()
-      })
-      .catch((error) => {
-        setMessage("fail")
-      })
-  }
-  const handleInterviewerSubmit = (e) => {
-    e.preventDefault()
-    const form = e.target;
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...interviewerState,
-      }),
-    })
-
-    .then(() => {
-      setMessage("success")
-      interviewReset()
-    })
-      .catch((error) => {
-        setMessage("fail")
-      })
-  }
-
   return (
     <div>
        <div className="application">
@@ -86,149 +23,8 @@ const Index = () => {
       <Navbar/>
       <Hero/>
       <Brands/>
+      <Platform/>
 
-      <div className="section mockup mockup3" id="service" >
-        <div className="container">
-          <div className="flex-box">
-            <div className="right-mock-up">
-              <h3 className="heading-7">INTERVIEW AS A SERVICE</h3>
-              <div className="div-block-2 mock-up" />
-              <div className="bullet w-clearfix">
-                <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075c941ce377b7d31a8b575_record%201.svg"
-                  loading="lazy"
-                  alt=""
-                  className="image-14"
-                />
-                <div className="text-block-9">
-                  Live recorded interviews by experienced professionals
-                </div>
-              </div>
-
-              <div className="bullet w-clearfix">
-                <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075c942b0982f0a45c9ac59_rinse%201.svg"
-                  loading="lazy"
-                  alt=""
-                  className="image-14"
-                />
-                <div className="text-block-9">
-                  In-depth actionable expert feedback
-                </div>
-              </div>
-              <div className="bullet w-clearfix">
-                <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075c941998b361bf5c688a2_chef%201.svg"
-                  loading="lazy"
-                  alt=""
-                  className="image-14"
-                />
-                <div className="text-block-9">
-                  Recommendations you can trust from trained panelists
-                </div>
-              </div>
-              <div className="bullet w-clearfix">
-                <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075c941c50ace8f1700debf_customer-support%201.svg"
-                  loading="lazy"
-                  alt=""
-                  className="image-14"
-                />
-                <div className="text-block-9">
-                  Customized interview process
-                </div>
-              </div>
-
-              <div className="bullet w-clearfix">
-                <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075c941c50ace0d6700debe_task%201.svg"
-                  loading="lazy"
-                  alt=""
-                  className="image-14"
-                  style={{marginLeft:"-3px"}}
-                />
-                <div className="text-block-9" style={{marginTop:"3px"}}>
-                  Professional interview experience
-                </div>
-              </div>
-            </div>
-            <div className="left-mock-up">
-              <img
-                src="interviewer.png"
-                loading="lazy"
-                width={70}
-                sizes="(max-width: 479px) 100vw, 563px"
-               /// srcSet="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075c9ab223a2f2b26443d64_mockup%20img-p-800.jpeg 800w, https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075c9ab223a2f2b26443d64_mockup%20img.jpg 986w"
-                alt=""
-                className="image-7"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="section mockup mockup4" >
-        <div className="container">
-          <div className="flex-box">
-            <div className="left-mock-up-2">
-              <img
-                src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075cb843b036c1ba8386fe9_mockup%20img2.jpg"
-                loading="lazy"
-                width={70}
-                sizes="(max-width: 479px) 100vw, 563px"
-                srcSet="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075cb843b036c1ba8386fe9_mockup%20img2-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075cb843b036c1ba8386fe9_mockup%20img2.jpg 1206w"
-                alt=""
-                className="image-7"
-              />
-            </div>
-            <div className="right-mock-up-1">
-              <h3 className="heading-7 mc2">IV Dashboard</h3>
-              <div className="div-block-2 mock-up r" />
-              <div className="bullet r w-clearfix">
-                <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075d43356447167f3925600_update-arrows%201.svg"
-                  loading="lazy"
-                  alt=""
-                  className="image-14 ri"
-                />
-                <div className="text-block-9 rig">
-                  Instant updates on a highly functional dashboard
-                </div>
-              </div>
-              <div className="bullet r w-clearfix">
-                <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075d43334af1e234be0deb2_bar-chart%201.svg"
-                  loading="lazy"
-                  alt=""
-                  className="image-14 ri"
-                />
-                <div className="text-block-9 rig">
-                  Graphically depicted easily comprehensible stats
-                </div>
-              </div>
-              <div className="bullet r w-clearfix">
-                <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075d433a333ce03231322cf_friends%201.svg"
-                  loading="lazy"
-                  alt=""
-                  className="image-14 ri"
-                />
-                <div className="text-block-9 rig">User friendly interface</div>
-              </div>
-              <div className="bullet r w-clearfix">
-                <img
-                  src="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075d433db2d08725957fa36_resume%201.svg"
-                  loading="lazy"
-                  alt=""
-                  className="image-14 ri"
-                />
-                <div className="text-block-9 rig">
-                  Upload a resume, Book a slot- it's as simple as that
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="section mockup col">
         <h1 className="heading2 panel">OUR INTERVIEWING PANEL</h1>
         <div className="div-block-2 small" />
@@ -479,66 +275,8 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div className="section" id="form" >
-        <div className="container" >
-          <div className="flex-box contact">
-            <div className="left w-clearfix">
-              <div className="div-block-4">
-                <h1 className="heading-12">Don’t be shy</h1>
-                <h1 className="heading-14 color">Say HELLO!</h1>
-              </div>
-              <p className={message?"paragraph-3":"paragraph-15"}>
-                To learn more or reach out to us - <br/> Simply drop us a note and our
-                 team <br/> will contact you at the earliest.
-              </p>
-             {message ==="success" && < div style={{marginTop:"30px",display:"flex",flexDirection:"row",marginBottom:"30px"}}>
-              <div>
-                <img src="check.png"/>
-                </div>
-                <div >
-                  <p className="suc-message">
-                    Thank You for reaching out to us! <br/>
-                    Your submission has been recieved
-                  </p>
-</div>
-              </div>
-}
-{message ==="fail" && < div style={{marginTop:"30px",display:"flex",flexDirection:"row",marginBottom:"30px"}}>
-              <div>
-                <img src="cross.png"/>
-                </div>
-                <div >
-                  <p className="fail-message">
-                    Sorry for inconvenience.<br/>Your form submission was unsuccessful!
-                  </p>
-</div>
-              </div>
-}
-              <div className="div-block-6">
-                <div onClick={() => {
-                  console.log("Business clicked")
-                  setMessage("")
-                  setInterviewerForm(true)
 
-                }} className={interviewerForm ? "div-block-7" : "div-block-5"}>
-                  <div className={interviewerForm ? "text-block-5 col" : "text-block-6 col"}>I am an</div>
-                  <h1 className={interviewerForm ? "cont" : "cont color"}>Interviewer</h1>
-                </div>
-                <div onClick={() => {
-                  console.log("Business clicked")
-                  setMessage("")
-                  setInterviewerForm(false)
-                }} className={interviewerForm ? "div-block-5" : "div-block-7"}>
-                  <div className={interviewerForm ? "text-block-6 col" : "text-block-5 col"}>I am a</div>
-                  <h1 className={interviewerForm ? "cont color" : "cont"}>Business</h1>
-                </div>
-              </div>
-            </div>
-
-            {interviewerForm ? <InterviewerForm  handleInput={handleInterViewerChange} handleForm={handleInterviewerSubmit} data={interviewerState}  /> : <BusinessForm handleInput={handleBusinessChange} handleForm={handleBusinessSubmit} data={bussinessState}  />}
-          </div>
-        </div>
-      </div>
+        <ContactForm />
 
       <div className="section footer-color">
         <div className="container" style={{marginTop:"-40px"}}>
@@ -587,6 +325,6 @@ const Index = () => {
       />
     </div >
   )
-}
+};
 
 export default Index

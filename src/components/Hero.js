@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 
 const HeroContentMobile = () => {
     return (
-        <div className="hero-mobile">
+        <div className="section-mobile">
             <Grid container>
                 <Grid
                     className="hero-content"
@@ -42,7 +42,7 @@ const HeroContentMobile = () => {
 
 const HeroContentDesktop = () => {
     return (
-        <div className="hero-desktop">
+        <div className="section-desktop">
             <Grid container>
                 <Grid
                     className="hero-content"
