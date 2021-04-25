@@ -14,7 +14,6 @@ function InterviewSectionMobile() {
                             loading="lazy"
                             srcSet="platform/interview-mobile-1x.png 1x, platform/interview-mobile-2x.png 2x"
                             alt="Interviewer"
-                            className="image-7"
                         />
                     </div>
                     <div className="bullet w-clearfix">

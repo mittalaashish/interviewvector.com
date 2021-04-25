@@ -79,7 +79,6 @@ function DashboardSectionMobile() {
                             sizes="(max-width: 479px) 100vw, 563px"
                             srcSet="https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075cb843b036c1ba8386fe9_mockup%20img2-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075cb843b036c1ba8386fe9_mockup%20img2.jpg 1206w"
                             alt=""
-                            className="image-7"
                         />
                     </div>
                     <div className="bullet r w-clearfix">

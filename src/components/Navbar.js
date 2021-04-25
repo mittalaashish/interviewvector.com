@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
 
-function NavigationLinks() {
+function NavigationLinks({ toggleDrawer = () => {} }) {
     return (
         <Grid container className="navigation-links" item xs={12}>
             <Link
@@ -17,6 +17,7 @@ function NavigationLinks() {
                 href="#home"
                 color="inherit"
                 underline="none"
+                onClick={toggleDrawer(false)}
             >
                 Home
             </Link>
@@ -25,6 +26,7 @@ function NavigationLinks() {
                 href="#about"
                 color="inherit"
                 underline="none"
+                onClick={toggleDrawer(false)}
             >
                 About
             </Link>
@@ -33,6 +35,7 @@ function NavigationLinks() {
                 href="#service"
                 color="inherit"
                 underline="none"
+                onClick={toggleDrawer(false)}
             >
                 Services
             </Link>
@@ -51,6 +54,7 @@ function NavigationLinks() {
                 href="#form"
                 color="inherit"
                 underline="none"
+                onClick={toggleDrawer(false)}
             >
                 Get In Touch
             </Link>
@@ -77,7 +81,7 @@ function NavigationDrawer({open, toggleDrawer}) {
                     <CloseOutlinedIcon />
                 </IconButton>
 
-                <NavigationLinks />
+                <NavigationLinks toggleDrawer={toggleDrawer} />
             </Grid>
         </Drawer>
     );

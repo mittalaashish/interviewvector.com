@@ -15218,8 +15218,7 @@ function DashboardSectionMobile() {
     loading: "lazy",
     sizes: "(max-width: 479px) 100vw, 563px",
     srcSet: "https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075cb843b036c1ba8386fe9_mockup%20img2-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/60733d2745729b18912a257d/6075cb843b036c1ba8386fe9_mockup%20img2.jpg 1206w",
-    alt: "",
-    className: "image-7"
+    alt: ""
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "bullet r w-clearfix"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
@@ -15510,8 +15509,7 @@ function InterviewSectionMobile() {
     src: "platform/interview-mobile-2x.png",
     loading: "lazy",
     srcSet: "platform/interview-mobile-1x.png 1x, platform/interview-mobile-2x.png 2x",
-    alt: "Interviewer",
-    className: "image-7"
+    alt: "Interviewer"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "bullet w-clearfix"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
