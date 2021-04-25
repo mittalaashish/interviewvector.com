@@ -1847,25 +1847,9 @@ margin-left: 20px;
 
 
 @media(max-width: 960px){
-  .copyright{
-    display:flex;
-    flex-direction:row;
-    justify-content: center;
-    padding-top: 20px;
-  }
-  .footer-line{
-    display: flex;
-    align-items: center;
-  }
   .about_heading{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-  }
-  .footer_contact{
-    flex-wrap: wrap;
-    display:flex;
-    flex-direction:row;
     justify-content: center;
   }
 
@@ -1920,6 +1904,25 @@ margin-left: 20px;
   .stand_card{
     padding:50px 0;
   }
+
+  .copyright{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  .footer_contact{
+    flex-wrap: wrap;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+  }
+
+  .footer-line{
+    display: flex;
+    align-items: center;
+  }
 }
 
 .testimonial_parent{
@@ -1961,6 +1964,10 @@ margin-left: 20px;
 }
 
 @media (max-width: 960px) {
+  .about_content {
+    justify-content: center;
+  }
+
   .about_image {
     padding: 50px 0;
   }
@@ -1971,7 +1978,12 @@ margin-left: 20px;
   }
 }
 
+@media (max-width: 480px) {
+  .text-block-9 br {
+    display: none;
+  }
 
-
-
-
+  .footer-email {
+    font-size:12px;
+  }
+}

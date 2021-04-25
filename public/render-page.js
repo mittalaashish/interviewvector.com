@@ -15901,7 +15901,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function NavigationLinks() {
+function NavigationLinks({
+  toggleDrawer = () => {}
+}) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1__.default, {
     container: true,
     className: "navigation-links",
@@ -15911,17 +15913,20 @@ function NavigationLinks() {
     className: "nav-link w-nav-link",
     href: "#home",
     color: "inherit",
-    underline: "none"
+    underline: "none",
+    onClick: toggleDrawer(false)
   }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_2__.default, {
     className: "nav-link w-nav-link",
     href: "#about",
     color: "inherit",
-    underline: "none"
+    underline: "none",
+    onClick: toggleDrawer(false)
   }, "About"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_2__.default, {
     className: "nav-link w-nav-link",
     href: "#service",
     color: "inherit",
-    underline: "none"
+    underline: "none",
+    onClick: toggleDrawer(false)
   }, "Services"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_2__.default, {
     className: "nav-link w-nav-link",
     href: "https://app.interviewvector.com/",
@@ -15933,7 +15938,8 @@ function NavigationLinks() {
     className: "nav-link button w-nav-link",
     href: "#form",
     color: "inherit",
-    underline: "none"
+    underline: "none",
+    onClick: toggleDrawer(false)
   }, "Get In Touch"));
 }
 
@@ -15958,7 +15964,9 @@ function NavigationDrawer({
     color: "inherit",
     "aria-label": "open drawer",
     onClick: toggleDrawer(false)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_icons_CloseOutlined__WEBPACK_IMPORTED_MODULE_5__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(NavigationLinks, null)));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_icons_CloseOutlined__WEBPACK_IMPORTED_MODULE_5__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(NavigationLinks, {
+    toggleDrawer: toggleDrawer
+  })));
 }
 
 ;
