@@ -442,8 +442,82 @@ div {
   padding: 100px 0;
 }
 
+.mockup-grid {
+  padding: 0 20px 80px 20px;
+}
+
+.mockup-grid.dashboard {
+  padding-bottom: 0;
+}
+
+.mockup-grid .bullet {
+  max-width: 500px;
+  margin: auto;
+}
+
+.section-mobile .image-7 {
+  max-width: 400px;
+  min-width: 60%;
+}
+
 .grid-image {
-  margin-top: -20px;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mockup-grid.dashboard .bullet {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.mockup-grid.dashboard .bullet .text {
+  margin-left: 25px;
+}
+
+.heading-7.mc2 {
+  text-align: center;
+}
+
+.div-block-2.mock-up.r {
+  margin: 10px auto 50px auto;
+}
+
+@media (min-width: 960px) {
+  .div-block-2.block-line {
+    margin: 10px auto 50px auto;
+  }
+
+  .mockup-grid .bullet {
+    margin: 0;
+  }
+
+  .mockup-grid .bullet.r {
+    float: right;
+    clear: both;
+  }
+
+  .mockup-grid.dashboard .bullet {
+    flex-direction: row-reverse;
+  }
+
+  .mockup-grid.dashboard .grid-element:first-child {
+    order:2;
+  }
+
+  .grid-image {
+    width: 100%;
+    padding: 50px 0;
+  }
+
+  .heading-7.mc2 {
+    text-align: right;
+  }
+
+  .div-block-2.mock-up.r {
+    margin: 10px 0 50px auto;
+  }
 }
 
 .contact-section {
@@ -867,13 +941,6 @@ h3 {
 
 .right-mock-up-1 {
   text-align: left;
-}
-
-.heading-7.mc2 {
-  text-align: right;
-}
-.div-block-2.mock-up.r {
-  margin-left: auto;
 }
 
 .image-14.ri {
