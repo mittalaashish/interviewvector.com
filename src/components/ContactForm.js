@@ -16,40 +16,40 @@ export default () => {
     const [interviewerState, setInterviewerState] = React.useState({type:"Interviewer",interviewer_name:"",year_of_graduation:"",current_employer:"",email:"",contact:"",linkedin_profile:"",message2:""})
     const interviewReset=()=>{
         setInterviewerState({type:"Interviewer",interviewer_name:"",year_of_graduation:"",current_employer:"",email:"",contact:"",linkedin_profile:"",message2:""})
-    }
-    const bussinessReset=()=>{
-        setBussinessState({type:"Business",name:"",company:"",role:"",email:"",contact_number:"",learn:"",message:""})
-    }
-    const [bussinessState, setBussinessState] = React.useState({type:"Business",name:"",company:"",role:"",email:"",contact_number:"",learn:"",message:""})
+    };
+    const businessReset=()=>{
+        setBusinessState({type:"Business",name:"",company:"",role:"",email:"",contact_number:"",learn:"",message:""})
+    };
+    const [businessState, setBusinessState] = React.useState({type:"Business",name:"",company:"",role:"",email:"",contact_number:"",learn:"",message:""})
     const handleInterViewerChange = (e) => {
-        setMessage('')
+        setMessage('');
         setInterviewerState({ ...interviewerState, [e.target.name]: e.target.value })
-    }
+    };
     const handleBusinessChange = (e) => {
-        setMessage('')
-        setBussinessState({ ...bussinessState, [e.target.name]: e.target.value })
-    }
+        setMessage('');
+        setBusinessState({ ...businessState, [e.target.name]: e.target.value })
+    };
     const handleBusinessSubmit = (e) => {
-        e.preventDefault()
-        const form = e.target
+        e.preventDefault();
+        const form = e.target;
         fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: encode({
                 'form-name': form.getAttribute('name'),
-                ...bussinessState,
+                ...businessState,
             }),
         })
             .then(() => {
                 setMessage("success")
-                bussinessReset()
+                businessReset()
             })
             .catch((error) => {
                 setMessage("fail")
             })
-    }
+    };
     const handleInterviewerSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const form = e.target;
         fetch('/', {
             method: 'POST',
@@ -61,58 +61,60 @@ export default () => {
         })
 
             .then(() => {
-                setMessage("success")
+                setMessage("success");
                 interviewReset()
             })
             .catch((error) => {
                 setMessage("fail")
             })
-    }
+    };
 
     return (
         <div className="contact-section" id="form" >
             <Container>
-                <Grid container>
-                    <Grid container item sm={12} md={6}>
+                <Grid container className="contact-content" spacing={2}>
+                    <Grid container item sm={12} md={6} className="contact-details">
                         <Grid item>
                             <h1 className="contact-headline">Don’t be shy</h1>
                             <h1 className="contact-subtext color">Say HELLO!</h1>
                         </Grid>
-                        <p className="contact-description">
-                            To learn more or reach out to us - <br/> Simply drop us a note and our
-                            team <br/> will contact you at the earliest.
-                        </p>
-                        {
-                            message ==="success" && (
-                                <div>
-                                    <div>
-                                        <img src="check.png"/>
+                        <div className="contact-description">
+                            <p>To learn more or reach out to us - <br/> Simply drop us a note and our
+                                team <br/> will contact you at the earliest.</p>
+
+                            {
+                                message ==="success" && (
+                                    <div className="contact-form-message">
+                                        <div>
+                                            <img src="check.png"/>
+                                        </div>
+                                        <div >
+                                            <p className="suc-message">
+                                                Thank You for reaching out to us! <br/>
+                                                Your submission has been recieved
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div >
-                                        <p className="suc-message">
-                                            Thank You for reaching out to us! <br/>
-                                            Your submission has been recieved
-                                        </p>
+                                )
+                            }
+                            {
+                                message ==="fail" && (
+                                    <div className="contact-form-message">
+                                        <div>
+                                            <img src="cross.png"/>
+                                        </div>
+                                        <div >
+                                            <p className="fail-message">
+                                                Sorry for inconvenience.<br/>
+                                                Your form submission was unsuccessful!
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                            )
-                        }
-                        {
-                            message ==="fail" && (
-                                <div>
-                                    <div>
-                                        <img src="cross.png"/>
-                                    </div>
-                                    <div >
-                                        <p className="fail-message">
-                                            Sorry for inconvenience.<br/>
-                                            Your form submission was unsuccessful!
-                                        </p>
-                                    </div>
-                                </div>
-                            )
-                        }
-                        <Grid container xs={12} className="contact-type">
+                                )
+                            }
+                        </div>
+
+                        <Grid container className="contact-type">
                             <Grid
                                 item
                                 xs={6}
@@ -140,7 +142,7 @@ export default () => {
                         </Grid>
                     </Grid>
 
-                    <Grid item sm="12" md="6" className="contact-form-wrapper">
+                    <Grid container item sm={12} md={5} className="contact-form-wrapper">
                         {
                             interviewerForm ?
                                 <InterviewerForm
@@ -151,7 +153,7 @@ export default () => {
                                 <BusinessForm
                                     handleInput={handleBusinessChange}
                                     handleForm={handleBusinessSubmit}
-                                    data={bussinessState}
+                                    data={businessState}
                                 />
                         }
                     </Grid>

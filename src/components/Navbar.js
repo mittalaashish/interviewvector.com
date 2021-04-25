@@ -90,7 +90,7 @@ export default () => {
     };
 
     return (
-        <AppBar position="fixed" color="white" elevation={0}>
+        <AppBar position="fixed" color="inherit" elevation={0}>
             <Toolbar>
                 <Container className="navbar-container">
                     <Grid container className="navbar-menu">
@@ -102,7 +102,7 @@ export default () => {
                             />
                         </Link>
 
-                        <Grid item xs={6} className="navigation-links-desktop">
+                        <Grid item xs={8} className="navigation-links-desktop">
                             <NavigationLinks />
                         </Grid>
 
