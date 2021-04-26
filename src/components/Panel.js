@@ -58,7 +58,7 @@ const Panel = () => {
                                 <div><hr className="panel-line"></hr></div>
                                 <div>
                                     <h6 className="desc_head">
-                                        Constantly accessed for quality <br/>
+                                      Constantly assessed for quality <br/>
                                         and communication skills
                                     </h6>
                                 </div>
